@@ -70,7 +70,7 @@ def image(slug, alt, prefix, lazy=True, sizes='(max-width: 600px) 92vw, 48vw'):
 
 
 def nav(prefix, current=''):
-    items = [('Works', 'works/'), ('Recordings', 'recordings/'), ('Instruments', 'unfold/'), ('Experiments', 'works/?category=spatial'), ('About', 'about/')]
+    items = [('Works', 'works/'), ('Recordings', 'recordings/'), ('Instruments', 'unfold/'), ('Experiments', 'experiments/'), ('About', 'about/')]
     return '<nav class="nav" aria-label="Main navigation">' + ''.join(f'<a href="{prefix}{path}"' + (' aria-current="page"' if name == current else '') + f'>{name}</a>' for name, path in items) + '</nav>'
 
 
@@ -130,6 +130,7 @@ def home():
         ('04', 'Drawn Fields', 'Drawings / 2025', 'works/drawn-fields/'),
         ('05', 'Spatial Studies', 'Image studies / 2022', 'works/?category=spatial'),
         ('06', 'Works on Paper', 'Selected work / 2025', 'works/works-on-paper/'),
+        ('07', 'Wave Sculpture', 'Moving image / Live JavaScript', 'experiments/wave-sculpture/'),
     ]
     index = ''.join(f'<a class="index-row" href="{url}"><span class="index-number">{number}</span><span class="index-title">{title}</span><span class="index-detail">{detail}</span><span class="index-arrow" aria-hidden="true">↗</span></a>' for number, title, detail, url in rows)
     content = f'''<div class="wrap">
@@ -149,7 +150,8 @@ def works():
         slug, title, alt = collection['images'][0]
         count = len(collection['images'])
         cards.append(f'''<article class="work-card" data-category="{collection['category']}"><a href="{collection['slug']}/"><div class="cover">{image(slug, alt, '../', sizes='(max-width: 600px) 44vw, (max-width: 900px) 46vw, 30vw')}</div><p class="meta"><span>{collection['number']}</span><span>{collection['year']} / {count} {'work' if count == 1 else 'works'}</span></p><h2>{collection['title']} <span aria-hidden="true">↗</span></h2></a><p class="card-note">{collection['medium']}</p></article>''')
-    filters = [('all', 'All works'), ('photography', 'Photography'), ('drawing', 'Drawings'), ('spatial', 'Spatial studies'), ('paper', 'On paper')]
+    cards.append(f'<article class="work-card" data-category="moving"><a href="../experiments/wave-sculpture/"><div class="cover">{image("wave-warm", "Still frame from the warm version of Wave Sculpture, a moving field of carved forms and colored light.", "../")}</div><p class="meta"><span>CF—GV—001</span><span>Two versions / Live work</span></p><h2>Wave Sculpture <span aria-hidden="true">↗</span></h2></a><p class="card-note">Generative moving image / JavaScript</p></article>')
+    filters = [('all', 'All works'), ('photography', 'Photography'), ('drawing', 'Drawings'), ('spatial', 'Spatial studies'), ('paper', 'On paper'), ('moving', 'Moving image')]
     buttons = ''.join(f'<button class="filter" type="button" data-filter="{key}" aria-pressed="{str(key == "all").lower()}">{label}</button>' for key, label in filters)
     content = heading('CF / Visual archive', 'Selected works<span style="color:var(--rust)">.</span>', 'Photography, drawings, surfaces, and uncertain spaces.', 'An edited archive, organized as collections. Open a series to follow its sequence.')
     content += f'<div class="wrap"><div class="filters" role="group" aria-label="Filter collections">{buttons}</div><p class="visually-hidden" id="filter-status" role="status" aria-live="polite"></p><div class="work-grid">{"".join(cards)}</div></div>'
@@ -192,6 +194,21 @@ def unfold():
     write('unfold/index.html', document('Unfold', 'A generative music studio for Mac by Cancelled Futures. Free and open source; release in preparation.', content, '../', 'Instruments', extra_script='<script src="../assets/pattern.js" defer></script>'))
 
 
+def experiments():
+    stylesheet = '<link rel="stylesheet" href="../assets/wave/player.css">'
+    content = heading('CF / Experiments', 'Experiments<span style="color:var(--rust)">.</span>', 'Systems in motion. Outcomes left open.')
+    content += f'<div class="wrap"><article class="experiment-card"><a href="wave-sculpture/" aria-label="Explore Wave Sculpture">{image("wave-warm", "Still frame from Wave Sculpture: a dimensional field of dark forms and warm light.", "../", lazy=False)}</a><div><p class="kicker">CF—GV—001 / Generative moving image</p><h2>Wave Sculpture</h2><p class="serif" style="font-size:30px;line-height:1.15">A surface that never quite settles.</p><p>Two versions of a real-time JavaScript work. Shifting color, carved depth, pulsing light, and a continuously changing surface.</p><a class="editorial-link" href="wave-sculpture/">Play the work <span aria-hidden="true">↗</span></a></div></article><div class="series-pagination"><a href="../works/?category=spatial">Spatial image studies →</a><a href="../works/">All visual work →</a></div></div>'
+    write('experiments/index.html', document('Experiments', 'Generative moving images and real-time JavaScript experiments by Roger Link.', content, '../', 'Experiments', extra_script=stylesheet))
+    content = heading('CF—GV—001 / Generative moving image', 'Wave Sculpture', 'A surface that never quite settles.', 'Contains pulsing light and camera motion. Nothing moves until you choose Play. No audio.')
+    content += f'''<div class="wrap"><section class="wave-player" data-wave-player data-frame-url="../../assets/wave/frame.html" data-poster-base="../../assets/art/" aria-label="Wave Sculpture player">
+      <div class="wave-stage" data-wave-stage id="wave-stage">{image('wave-warm', 'Still frame from the original Wave Sculpture. Use Play to see the live moving work.', '../../', lazy=False, sizes='92vw')}</div>
+      <div class="wave-toolbar"><div class="wave-controls"><button type="button" data-wave-play aria-pressed="false" aria-controls="wave-stage">Play moving work</button><button type="button" data-wave-restart>Restart</button><button type="button" data-wave-fullscreen>Fullscreen</button></div><div class="wave-versions" role="group" aria-label="Artwork version"><button type="button" data-wave-variant="warm" aria-pressed="true">Warm relief</button><button type="button" data-wave-variant="drift" aria-pressed="false">Color drift</button></div></div>
+      <p class="wave-status" data-wave-status role="status" aria-live="polite">Still frame shown. Press Play to run the original JavaScript artwork.</p><noscript><p>JavaScript and WebGL are needed to play this work. A still frame is shown above.</p></noscript>
+      </section><div class="wave-notes"><p>Two versions of the work originally presented on <a class="editorial-link" href="https://rogerlink.com/">rogerlink.com ↗</a>. The warm version emphasizes relief and material depth; the other lets color drift further. These labels distinguish the versions, rather than assigning new titles to separate works.</p><p>Made by Roger Link using JavaScript, Three.js, and custom shaders. Generated live in your browser, not a recorded video. Each restart begins a fresh run. Playback pauses when the work leaves the screen or the tab is hidden.</p></div><nav class="series-pagination" aria-label="Related work"><a href="../">← All experiments</a><a href="../../works/">Visual archive →</a></nav></div>'''
+    scripts = '<link rel="stylesheet" href="../../assets/wave/player.css"><script src="../../assets/wave/player.js" defer></script>'
+    write('experiments/wave-sculpture/index.html', document('Wave Sculpture', 'A real-time generative moving image by Roger Link. Play two versions of the original JavaScript artwork.', content, '../../', 'Experiments', extra_script=scripts))
+
+
 def main():
     home()
     works()
@@ -199,6 +216,7 @@ def main():
     recordings()
     about()
     unfold()
+    experiments()
     missing = heading('CF / 404', 'Not here<span style="color:var(--rust)">.</span>', 'A different path, perhaps.')
     missing += '<div class="wrap"><div class="prose"><p>This page is not in the Index. Return to the recordings, follow a visual collection, or start again.</p><a class="editorial-link" href="/">Back to the Index <span aria-hidden="true">↗</span></a></div></div>'
     write('404.html', document('Page not found', 'This page is not in the Cancelled Futures Index.', missing, '/'))

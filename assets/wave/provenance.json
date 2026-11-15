@@ -1,0 +1,15 @@
+{
+  "source": "https://github.com/roger-link/roger-link.github.io",
+  "commit": "2b8116b79b4caaba832cbb6bb3e988d05038c209",
+  "file": "index.html",
+  "variants": {
+    "warm": "today",
+    "drift": "yesterday"
+  },
+  "three": "0.160.0",
+  "changes": [
+    "Explicit version selection",
+    "Playback lifecycle and pause/resume",
+    "Pixel ratio cap of 1.5"
+  ]
+}

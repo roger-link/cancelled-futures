@@ -262,5 +262,29 @@
   "plastic-memory-1600": {
     "width": 1200,
     "height": 1200
+  },
+  "wave-warm-480": {
+    "width": 480,
+    "height": 270
+  },
+  "wave-warm-960": {
+    "width": 960,
+    "height": 540
+  },
+  "wave-warm-1600": {
+    "width": 1280,
+    "height": 720
+  },
+  "wave-drift-480": {
+    "width": 480,
+    "height": 270
+  },
+  "wave-drift-960": {
+    "width": 960,
+    "height": 540
+  },
+  "wave-drift-1600": {
+    "width": 1280,
+    "height": 720
   }
 }
