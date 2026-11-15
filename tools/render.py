@@ -7,6 +7,14 @@ DIMENSIONS = json.loads((ROOT / 'assets/art/dimensions.json').read_text())
 
 COLLECTIONS = [
     {
+        'slug': 'processing-studies', 'title': 'Processing Studies', 'number': 'CF—GA—001',
+        'category': 'generative', 'year': 'Year to confirm', 'medium': 'Generative art / Processing',
+        'lead': 'Fragments accumulate. An image takes shape.',
+        'description': 'Four still outputs made with Processing scripts by Roger Link. Bright color, patterned fragments, muted photographic textures, and a restrained ochre field offer four different densities of the same fragmented visual language. These are saved images, not a live browser animation. Collection and image captions are descriptive working labels.',
+        'source': 'https://github.com/roger-link/processing',
+        'images': [('processing-color', 'Color fragments', 'Overlapping angular fragments in pink, violet, blue, red, and orange form a dense image.'), ('processing-pattern', 'Pattern fragments', 'Black-and-white patterned fragments are interspersed with sharp yellow, blue, and magenta shapes.'), ('processing-earth', 'Muted fragments', 'Layered angular fragments of muted brown, gray, green, and cream photographic textures.'), ('processing-ochre', 'Ochre field', 'A dense field of translucent ochre and olive angular shapes against dark gaps.')],
+    },
+    {
         'slug': 'bicycle-2007', 'title': 'Bicycle, 2007', 'number': 'CF—PH—001',
         'category': 'photography', 'year': '2007', 'medium': 'Color-inverted photographs',
         'lead': 'A familiar body. An unfamiliar surface.',
@@ -31,8 +39,8 @@ COLLECTIONS = [
         'slug': 'drawn-fields', 'title': 'Drawn Fields', 'number': 'CF—DR—001',
         'category': 'drawing', 'year': '2025', 'medium': 'Digital drawings',
         'lead': 'Lines accumulate. Shapes drift out of alignment.',
-        'description': 'Selected drawings moving between open networks on dark grounds, dense ribbon-like gestures, and pale fields of suspended fragments. These are related approaches, not interchangeable variations.',
-        'images': [('drawing-network', 'Open network', 'Fine multicolored lines and pale organic fragments suspended on a black ground.'), ('drawing-ribbons', 'Ribbons', 'Dense loops of pink, blue, green, and yellow marks interweave across the image.'), ('drawing-pale', 'Pale field', 'Transparent pastel fragments, fine meshes, and darker interruptions in a pale atmospheric field.'), ('drawing-purple', 'Orange / purple', 'Angular orange and turquoise shapes float in a purple field crossed by finer lines.')],
+        'description': 'Eight drawings moving between open networks on dark grounds, dense ribbon-like gestures, pale fields of suspended fragments, and sharply colored forms. The sequence shifts between fine line, layered color, and broad gestures. Captions are descriptive labels rather than formal artwork titles.',
+        'images': [('drawing-network', 'Open network', 'Fine multicolored lines and pale organic fragments suspended on a black ground.'), ('drawing-ribbons', 'Ribbons', 'Dense loops of pink, blue, green, and yellow marks interweave across the image.'), ('drawing-pale', 'Pale field', 'Transparent pastel fragments, fine meshes, and darker interruptions in a pale atmospheric field.'), ('drawing-purple', 'Orange / purple', 'Angular orange and turquoise shapes float in a purple field crossed by finer lines.'), ('drawing-electric', 'Electric forms', 'Vivid orange, blue, and green shapes overlap black and pale yellow ribbons on a grainy gray ground.'), ('drawing-blue-pink', 'Blue / pink', 'Looping multicolored outlines cross layered pale pink, lime, teal, and deep blue fields.'), ('drawing-teal-violet', 'Teal / violet', 'Broad teal, orange, and violet gestures intersect with fine pink, yellow, and white lines.'), ('drawing-peach', 'Peach field', 'Blue strokes and pale folded forms float among dark shapes and fluorescent marks on a peach ground.')],
     },
     {
         'slug': 'facades-grids', 'title': 'Facades / Grids', 'number': 'CF—DS—001',
@@ -50,10 +58,10 @@ COLLECTIONS = [
     },
     {
         'slug': 'works-on-paper', 'title': 'Works on Paper', 'number': 'CF—WP—001',
-        'category': 'paper', 'year': '2025', 'medium': 'Work on paper',
+        'category': 'paper', 'year': '2025', 'medium': 'Drawings and works on paper',
         'lead': 'A surface that remembers its earlier marks.',
-        'description': 'A selected layered work on paper. Warm orange and red passages overlap with darker loops, green interruptions, and partly buried marks. The paper edge remains part of the reproduction.',
-        'images': [('paper-warm', 'Layered sheet', 'A warm orange and red layered abstraction on paper, with dark loops and partly buried colored marks.')],
+        'description': 'Five works on paper, moving from a warm layered surface through open yellow passages, looping colored lines, and white gestures to a dense dark network. Paper texture and overlapping marks remain visible. Captions are descriptive labels rather than formal artwork titles.',
+        'images': [('paper-warm', 'Layered sheet', 'A warm orange and red layered abstraction on paper, with dark loops and partly buried colored marks.'), ('paper-yellow-lines', 'Yellow / wandering lines', 'Dark burgundy lines wander across a pale yellow field with faint green, gray, and white marks on textured paper.'), ('paper-color-loops', 'Colored loops', 'Red, green, blue, ochre, and rose strokes loop across a pale paper ground, interspersed with fine gray lines.'), ('paper-white-gestures', 'White gestures', 'White gestural marks interrupt layered pink, orange, green, and blue forms and fine dark outlines on paper.'), ('paper-dark-network', 'Dark network', 'Dense black looping strokes cross red, magenta, and teal marks, leaving small openings of pale paper.')],
     },
 ]
 
@@ -132,6 +140,7 @@ def home():
         ('06', 'Works on Paper', 'Selected work / 2025', 'works/works-on-paper/'),
         ('07', 'Wave Sculpture', 'Moving image / Live JavaScript', 'experiments/wave-sculpture/'),
         ('08', 'Whoop Dee Doo', 'Collaborative installations', 'whoop-dee-doo/'),
+        ('09', 'Processing Studies', 'Generative art / Selected stills', 'works/processing-studies/'),
     ]
     index = ''.join(f'<a class="index-row" href="{url}"><span class="index-number">{number}</span><span class="index-title">{title}</span><span class="index-detail">{detail}</span><span class="index-arrow" aria-hidden="true">↗</span></a>' for number, title, detail, url in rows)
     content = f'''<div class="wrap">
@@ -153,7 +162,7 @@ def works():
         cards.append(f'''<article class="work-card" data-category="{collection['category']}"><a href="{collection['slug']}/"><div class="cover">{image(slug, alt, '../', sizes='(max-width: 600px) 44vw, (max-width: 900px) 46vw, 30vw')}</div><p class="meta"><span>{collection['number']}</span><span>{collection['year']} / {count} {'work' if count == 1 else 'works'}</span></p><h2>{collection['title']} <span aria-hidden="true">↗</span></h2></a><p class="card-note">{collection['medium']}</p></article>''')
     cards.append(f'<article class="work-card" data-category="moving"><a href="../experiments/wave-sculpture/"><div class="cover">{image("wave-warm", "Still frame from the warm version of Wave Sculpture, a moving field of carved forms and colored light.", "../")}</div><p class="meta"><span>CF—GV—001</span><span>Two versions / Live work</span></p><h2>Wave Sculpture <span aria-hidden="true">↗</span></h2></a><p class="card-note">Generative moving image / JavaScript</p></article>')
     cards.append(f'<article class="work-card" data-category="collaborative"><a href="../whoop-dee-doo/"><div class="cover">{image("tba-room", "Whoop Dee Doo installation for TBA: a reflective purple-lit room with a sculptural brain and projected image.", "../")}</div><p class="meta"><span>Whoop Dee Doo</span><span>TBA / Portland</span></p><h2>Whoop Dee Doo <span aria-hidden="true">↗</span></h2></a><p class="card-note">Collaborative installations / Project documentation</p></article>')
-    filters = [('all', 'All works'), ('photography', 'Photography'), ('drawing', 'Drawings'), ('spatial', 'Spatial studies'), ('paper', 'On paper'), ('moving', 'Moving image'), ('collaborative', 'Collaborative')]
+    filters = [('all', 'All works'), ('photography', 'Photography'), ('drawing', 'Drawings'), ('spatial', 'Spatial studies'), ('paper', 'On paper'), ('generative', 'Generative art'), ('moving', 'Moving image'), ('collaborative', 'Collaborative')]
     buttons = ''.join(f'<button class="filter" type="button" data-filter="{key}" aria-pressed="{str(key == "all").lower()}">{label}</button>' for key, label in filters)
     content = heading('CF / Visual archive', 'Selected works<span style="color:var(--rust)">.</span>', 'Photography, drawings, surfaces, and uncertain spaces.', 'An edited archive, organized as collections. Open a series to follow its sequence.')
     content += f'<div class="wrap"><div class="filters" role="group" aria-label="Filter collections">{buttons}</div><p class="visually-hidden" id="filter-status" role="status" aria-live="polite"></p><div class="work-grid">{"".join(cards)}</div></div>'
@@ -167,6 +176,8 @@ def series():
             caption = escape(title, quote=True)
             figures.append(f'<figure><a class="image-link" href="../../assets/art/{slug}-1600.webp" data-view-image data-caption="{caption}" aria-label="Enlarge: {caption}">{image(slug, alt, "../../", lazy=position != 1, sizes="(max-width: 600px) 92vw, 80vw" if position == 1 else "(max-width: 600px) 92vw, 45vw")}</a><figcaption><span>{title}</span><span>{position:02d} / {len(collection["images"]):02d}</span></figcaption></figure>')
         content = heading(collection['number'] + ' / ' + collection['year'], collection['title'], collection['lead'])
+        if collection.get('source'):
+            content += f'<div class="wrap"><a class="editorial-link" href="{escape(collection["source"], quote=True)}" style="margin-top:24px">View the Processing scripts <span aria-hidden="true">↗</span></a></div>'
         content += f'<div class="wrap"><div class="series-intro"><p>{collection["description"]}</p><dl class="series-meta"><div><dt>Collection</dt><dd>{collection["medium"]}</dd></div><div><dt>Selection</dt><dd>{len(figures)} works</dd></div><div><dt>Artist</dt><dd>Roger Link</dd></div><div><dt>Archive</dt><dd><a href="../">All collections ↗</a></dd></div></dl></div><div class="gallery">{"".join(figures)}</div>'
         previous = COLLECTIONS[(index - 1) % len(COLLECTIONS)]
         following = COLLECTIONS[(index + 1) % len(COLLECTIONS)]
@@ -200,7 +211,9 @@ def experiments():
     stylesheet = '<link rel="stylesheet" href="../assets/wave/player.css">'
     content = heading('CF / Experiments', 'Experiments<span style="color:var(--rust)">.</span>', 'Systems in motion. Outcomes left open.')
     content += f'<div class="wrap"><article class="experiment-card"><a href="wave-sculpture/" aria-label="Explore Wave Sculpture">{image("wave-warm", "Still frame from Wave Sculpture: a dimensional field of dark forms and warm light.", "../", lazy=False)}</a><div><p class="kicker">CF—GV—001 / Generative moving image</p><h2>Wave Sculpture</h2><p class="serif" style="font-size:30px;line-height:1.15">A surface that never quite settles.</p><p>Two versions of a real-time JavaScript work. Shifting color, carved depth, pulsing light, and a continuously changing surface.</p><a class="editorial-link" href="wave-sculpture/">Play the work <span aria-hidden="true">↗</span></a></div></article><div class="series-pagination"><a href="../works/?category=spatial">Spatial image studies →</a><a href="../works/">All visual work →</a></div></div>'
-    write('experiments/index.html', document('Experiments', 'Generative moving images and real-time JavaScript experiments by Roger Link.', content, '../', 'Experiments', extra_script=stylesheet))
+    processing_card = f'<article class="experiment-card"><a href="../works/processing-studies/" aria-label="Explore Processing Studies">{image("processing-color", "Dense pink, blue, and orange fragments from a generative Processing artwork.", "../")}</a><div><p class="kicker">CF—GA—001 / Generative art</p><h2>Processing Studies</h2><p class="serif" style="font-size:30px;line-height:1.15">Fragments accumulate.</p><p>Four saved outputs made with Processing scripts. Color, pattern, and image fragments gather into densely layered fields.</p><a class="editorial-link" href="../works/processing-studies/">View the stills <span aria-hidden="true">↗</span></a></div></article>'
+    content = content.replace('<div class="series-pagination">', processing_card + '<div class="series-pagination">', 1)
+    write('experiments/index.html', document('Experiments', 'Generative art made with Processing and real-time JavaScript moving images by Roger Link.', content, '../', 'Experiments', extra_script=stylesheet))
     content = heading('CF—GV—001 / Generative moving image', 'Wave Sculpture', 'A surface that never quite settles.', 'Contains pulsing light and camera motion. Nothing moves until you choose Play. No audio.')
     content += f'''<div class="wrap"><section class="wave-player" data-wave-player data-frame-url="../../assets/wave/frame.html" data-poster-base="../../assets/art/" aria-label="Wave Sculpture player">
       <div class="wave-stage" data-wave-stage id="wave-stage">{image('wave-warm', 'Still frame from the original Wave Sculpture. Use Play to see the live moving work.', '../../', lazy=False, sizes='92vw')}</div>

@@ -358,5 +358,149 @@
   "baltimore-roger-1600": {
     "width": 900,
     "height": 600
+  },
+  "drawing-electric-480": {
+    "width": 339,
+    "height": 480
+  },
+  "drawing-electric-960": {
+    "width": 679,
+    "height": 960
+  },
+  "drawing-electric-1600": {
+    "width": 1131,
+    "height": 1600
+  },
+  "drawing-blue-pink-480": {
+    "width": 339,
+    "height": 480
+  },
+  "drawing-blue-pink-960": {
+    "width": 679,
+    "height": 960
+  },
+  "drawing-blue-pink-1600": {
+    "width": 1131,
+    "height": 1600
+  },
+  "drawing-teal-violet-480": {
+    "width": 320,
+    "height": 480
+  },
+  "drawing-teal-violet-960": {
+    "width": 639,
+    "height": 960
+  },
+  "drawing-teal-violet-1600": {
+    "width": 1065,
+    "height": 1600
+  },
+  "drawing-peach-480": {
+    "width": 371,
+    "height": 480
+  },
+  "drawing-peach-960": {
+    "width": 742,
+    "height": 960
+  },
+  "drawing-peach-1600": {
+    "width": 1236,
+    "height": 1600
+  },
+  "paper-yellow-lines-480": {
+    "width": 480,
+    "height": 360
+  },
+  "paper-yellow-lines-960": {
+    "width": 960,
+    "height": 720
+  },
+  "paper-yellow-lines-1600": {
+    "width": 1600,
+    "height": 1200
+  },
+  "paper-color-loops-480": {
+    "width": 360,
+    "height": 480
+  },
+  "paper-color-loops-960": {
+    "width": 720,
+    "height": 960
+  },
+  "paper-color-loops-1600": {
+    "width": 1200,
+    "height": 1600
+  },
+  "paper-white-gestures-480": {
+    "width": 360,
+    "height": 480
+  },
+  "paper-white-gestures-960": {
+    "width": 720,
+    "height": 960
+  },
+  "paper-white-gestures-1600": {
+    "width": 1200,
+    "height": 1600
+  },
+  "paper-dark-network-480": {
+    "width": 360,
+    "height": 480
+  },
+  "paper-dark-network-960": {
+    "width": 720,
+    "height": 960
+  },
+  "paper-dark-network-1600": {
+    "width": 1200,
+    "height": 1600
+  },
+  "processing-color-480": {
+    "width": 480,
+    "height": 384
+  },
+  "processing-color-960": {
+    "width": 960,
+    "height": 768
+  },
+  "processing-color-1600": {
+    "width": 1000,
+    "height": 800
+  },
+  "processing-pattern-480": {
+    "width": 480,
+    "height": 384
+  },
+  "processing-pattern-960": {
+    "width": 960,
+    "height": 768
+  },
+  "processing-pattern-1600": {
+    "width": 1000,
+    "height": 800
+  },
+  "processing-earth-480": {
+    "width": 480,
+    "height": 384
+  },
+  "processing-earth-960": {
+    "width": 960,
+    "height": 768
+  },
+  "processing-earth-1600": {
+    "width": 1000,
+    "height": 800
+  },
+  "processing-ochre-480": {
+    "width": 480,
+    "height": 384
+  },
+  "processing-ochre-960": {
+    "width": 960,
+    "height": 768
+  },
+  "processing-ochre-1600": {
+    "width": 1000,
+    "height": 800
   }
 }
