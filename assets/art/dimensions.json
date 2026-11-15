@@ -286,5 +286,77 @@
   "wave-drift-1600": {
     "width": 1280,
     "height": 720
+  },
+  "tba-room-480": {
+    "width": 480,
+    "height": 320
+  },
+  "tba-room-960": {
+    "width": 720,
+    "height": 480
+  },
+  "tba-room-1600": {
+    "width": 720,
+    "height": 480
+  },
+  "tba-wall-480": {
+    "width": 480,
+    "height": 320
+  },
+  "tba-wall-960": {
+    "width": 720,
+    "height": 480
+  },
+  "tba-wall-1600": {
+    "width": 720,
+    "height": 480
+  },
+  "tba-projection-480": {
+    "width": 480,
+    "height": 320
+  },
+  "tba-projection-960": {
+    "width": 720,
+    "height": 480
+  },
+  "tba-projection-1600": {
+    "width": 720,
+    "height": 480
+  },
+  "baltimore-performance-480": {
+    "width": 480,
+    "height": 320
+  },
+  "baltimore-performance-960": {
+    "width": 900,
+    "height": 600
+  },
+  "baltimore-performance-1600": {
+    "width": 900,
+    "height": 600
+  },
+  "baltimore-audience-480": {
+    "width": 480,
+    "height": 320
+  },
+  "baltimore-audience-960": {
+    "width": 900,
+    "height": 600
+  },
+  "baltimore-audience-1600": {
+    "width": 900,
+    "height": 600
+  },
+  "baltimore-roger-480": {
+    "width": 480,
+    "height": 320
+  },
+  "baltimore-roger-960": {
+    "width": 900,
+    "height": 600
+  },
+  "baltimore-roger-1600": {
+    "width": 900,
+    "height": 600
   }
 }

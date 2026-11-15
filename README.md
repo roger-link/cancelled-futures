@@ -17,6 +17,8 @@ This replacement is published through the existing GitHub Pages source branch, `
 - `/works/rooms-without-occupants/`: two spatial studies
 - `/works/works-on-paper/`: one layered work on paper
 - `/experiments/` and `/experiments/wave-sculpture/`: playable Wave Sculpture in two original versions
+- `/whoop-dee-doo/` and `/whoop-dee-doo/tba/`: collaborative project section and three photographs of the TBA installation in Portland
+- `/whoop-dee-doo/baltimore/`: three show photographs; date, venue, role, and photo credits await further details
 - `/about/`: project context
 - `/unfold/`: Unfold overview and honest release status
 - `404.html`: custom missing-page response
@@ -25,7 +27,7 @@ Static HTML, CSS, and JavaScript with local WebP artwork and self-hosted fonts. 
 
 Wave Sculpture preserves the two shader-based versions from rogerlink.com, presented as Warm relief and Color drift. Visitors can play, pause, restart, switch versions, and use fullscreen where supported. Playback pauses when the work is offscreen or the document is hidden; nothing autoplays, including for reduced-motion users. Still images remain available without JavaScript or WebGL. Source provenance and the noise license are in `assets/wave/`; Three.js and its MIT license are in `assets/vendor/three/`. The original rogerlink.com site is unchanged.
 
-The 20 archive works are an initial implementation of the second review, not the entire eventual archive. Whoop Dee Doo is deliberately deferred. The source collection records and shared templates are in `tools/render.py`; run `python3 tools/render.py` after editing copy, sequence, or metadata. The generated HTML files are served directly; no server-side Python is needed. Responsive rendition sizes are recorded in `assets/art/dimensions.json`.
+The 20 archive works are an initial implementation of the second review, not the entire eventual archive. Whoop Dee Doo has a separate collaborative project section. Its initial TBA page uses three photographs supplied by Roger, with project details and design credits taken from his earlier TBA portfolio entry. No project year is assigned. The source collection records and shared templates are in `tools/render.py`; run `python3 tools/render.py` after editing copy, sequence, or metadata. The generated HTML files are served directly; no server-side Python is needed. Responsive rendition sizes are recorded in `assets/art/dimensions.json`.
 
 The image viewer supports arrow keys, previous/next buttons, Escape, modal focus handling, and return to the opening image. Without JavaScript, image links still open local artwork files and all collections remain visible.
 

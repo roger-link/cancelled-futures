@@ -131,6 +131,7 @@ def home():
         ('05', 'Spatial Studies', 'Image studies / 2022', 'works/?category=spatial'),
         ('06', 'Works on Paper', 'Selected work / 2025', 'works/works-on-paper/'),
         ('07', 'Wave Sculpture', 'Moving image / Live JavaScript', 'experiments/wave-sculpture/'),
+        ('08', 'Whoop Dee Doo', 'Collaborative installations', 'whoop-dee-doo/'),
     ]
     index = ''.join(f'<a class="index-row" href="{url}"><span class="index-number">{number}</span><span class="index-title">{title}</span><span class="index-detail">{detail}</span><span class="index-arrow" aria-hidden="true">↗</span></a>' for number, title, detail, url in rows)
     content = f'''<div class="wrap">
@@ -151,7 +152,8 @@ def works():
         count = len(collection['images'])
         cards.append(f'''<article class="work-card" data-category="{collection['category']}"><a href="{collection['slug']}/"><div class="cover">{image(slug, alt, '../', sizes='(max-width: 600px) 44vw, (max-width: 900px) 46vw, 30vw')}</div><p class="meta"><span>{collection['number']}</span><span>{collection['year']} / {count} {'work' if count == 1 else 'works'}</span></p><h2>{collection['title']} <span aria-hidden="true">↗</span></h2></a><p class="card-note">{collection['medium']}</p></article>''')
     cards.append(f'<article class="work-card" data-category="moving"><a href="../experiments/wave-sculpture/"><div class="cover">{image("wave-warm", "Still frame from the warm version of Wave Sculpture, a moving field of carved forms and colored light.", "../")}</div><p class="meta"><span>CF—GV—001</span><span>Two versions / Live work</span></p><h2>Wave Sculpture <span aria-hidden="true">↗</span></h2></a><p class="card-note">Generative moving image / JavaScript</p></article>')
-    filters = [('all', 'All works'), ('photography', 'Photography'), ('drawing', 'Drawings'), ('spatial', 'Spatial studies'), ('paper', 'On paper'), ('moving', 'Moving image')]
+    cards.append(f'<article class="work-card" data-category="collaborative"><a href="../whoop-dee-doo/"><div class="cover">{image("tba-room", "Whoop Dee Doo installation for TBA: a reflective purple-lit room with a sculptural brain and projected image.", "../")}</div><p class="meta"><span>Whoop Dee Doo</span><span>TBA / Portland</span></p><h2>Whoop Dee Doo <span aria-hidden="true">↗</span></h2></a><p class="card-note">Collaborative installations / Project documentation</p></article>')
+    filters = [('all', 'All works'), ('photography', 'Photography'), ('drawing', 'Drawings'), ('spatial', 'Spatial studies'), ('paper', 'On paper'), ('moving', 'Moving image'), ('collaborative', 'Collaborative')]
     buttons = ''.join(f'<button class="filter" type="button" data-filter="{key}" aria-pressed="{str(key == "all").lower()}">{label}</button>' for key, label in filters)
     content = heading('CF / Visual archive', 'Selected works<span style="color:var(--rust)">.</span>', 'Photography, drawings, surfaces, and uncertain spaces.', 'An edited archive, organized as collections. Open a series to follow its sequence.')
     content += f'<div class="wrap"><div class="filters" role="group" aria-label="Filter collections">{buttons}</div><p class="visually-hidden" id="filter-status" role="status" aria-live="polite"></p><div class="work-grid">{"".join(cards)}</div></div>'
@@ -209,6 +211,40 @@ def experiments():
     write('experiments/wave-sculpture/index.html', document('Wave Sculpture', 'A real-time generative moving image by Roger Link. Play two versions of the original JavaScript artwork.', content, '../../', 'Experiments', extra_script=scripts))
 
 
+def whoop_dee_doo():
+    content = heading('CF / Collaborative work', 'Whoop Dee Doo', 'Environments made together.', 'Selected project documentation, presented separately from the independent visual work.')
+    content += f'<div class="wrap"><section class="record-page"><a href="tba/" aria-label="Explore the TBA installation">{image("tba-room", "Reflective walls, colored light, a sculptural brain, and a projection inside the TBA installation.", "../", lazy=False)}</a><div><p class="kicker">Installation / Portland</p><h2 class="record-title">TBA installation</h2><p class="lead serif">A room for the brain.</p><p>An interactive environment made through Whoop Dee Doo for the Time-Based Art Festival. Found materials, colored light, and projected memories turn a room into an imagined interior of the body.</p><a class="editorial-link" href="tba/">View the project <span aria-hidden="true">↗</span></a></div></section><nav class="series-pagination" aria-label="Related work"><a href="../works/">← Visual archive</a><a href="../about/">About the practice →</a></nav></div>'
+    baltimore_card = f'<section class="record-page"><a href="baltimore/" aria-label="Explore the Baltimore show">{image("baltimore-performance", "Costumed performers in a constructed Whoop Dee Doo set with a large face above the stage.", "../")}</a><div><p class="kicker">Live show / Baltimore</p><h2 class="record-title">Baltimore show</h2><p class="lead serif">A set becomes a gathering.</p><p>Three photographs of a Whoop Dee Doo show: the performance, the audience, and the room in use.</p><a class="editorial-link" href="baltimore/">View the project <span aria-hidden="true">↗</span></a></div></section>'
+    content = content.replace('<nav class="series-pagination"', baltimore_card + '<nav class="series-pagination"', 1)
+    write('whoop-dee-doo/index.html', document('Whoop Dee Doo', 'Collaborative work through Whoop Dee Doo: an interactive installation for TBA in Portland and a live show in Baltimore.', content, '../', 'Works'))
+    images = [
+        ('tba-room', 'Room view', 'A purple and red-lit installation with reflective circular forms covering the left wall, a sculptural brain in the foreground, and a projection at the back.'),
+        ('tba-wall', 'Reflective wall / detail', 'Metallic bowls and smaller reflective forms catch purple, red, and green light against dark plastic-covered walls.'),
+        ('tba-projection', 'Projection / interior', 'A close-up moving image of a mouth is projected onto the back wall beside an illuminated doorway and the sculptural brain.'),
+    ]
+    figures = []
+    for position, (slug, title, alt) in enumerate(images, start=1):
+        figures.append(f'<figure><a class="image-link" href="../../assets/art/{slug}-1600.webp" data-view-image data-caption="{title}" aria-label="Enlarge: {title}">{image(slug, alt, "../../", lazy=position != 1, sizes="92vw" if position == 1 else "(max-width: 600px) 92vw, 45vw")}</a><figcaption><span>{title}</span><span>{position:02d} / 03</span></figcaption></figure>')
+    content = heading('Whoop Dee Doo / Portland', 'TBA installation', 'A room for the brain.', 'An interactive installation for the Time-Based Art Festival, presented through Whoop Dee Doo.')
+    content += '<div class="wrap"><div class="series-intro"><p>Part of a larger Whoop Dee Doo environment themed around the body, this room imagined the brain as a space visitors could enter. A sculptural brain could be manipulated to control projected “memories.” Arduino, tilt switches, Max/MSP, and found video connected the object to the changing image. Discarded materials—including carpet, trash bags, and metallic bowls—formed the surrounding room.</p><dl class="series-meta"><div><dt>Project</dt><dd>Whoop Dee Doo / TBA, Portland</dd></div><div><dt>Interactive system</dt><dd>Roger Link</dd></div><div><dt>Room design</dt><dd>Roger Link with Natalie Myers and Chris Beer</dd></div><div><dt>Photographs</dt><dd>Roger Link</dd></div></dl></div>'
+    content += f'<div class="gallery">{"".join(figures)}</div><nav class="series-pagination" aria-label="Related work"><a href="../">← Whoop Dee Doo</a><a href="../../works/">Visual archive →</a></nav></div>'
+    content += '<dialog class="viewer" id="viewer" aria-label="Project photograph viewer"><div class="viewer-layout"><div class="viewer-top"><span data-view-position aria-live="polite"></span><button type="button" data-view-close autofocus>Close ×</button></div><figure><img src="" alt=""></figure><div class="viewer-bottom"><span data-view-caption></span><div class="viewer-controls"><button type="button" data-view-previous aria-label="Previous image">← Previous</button><button type="button" data-view-next aria-label="Next image">Next →</button></div></div></div></dialog>'
+    write('whoop-dee-doo/tba/index.html', document('TBA installation — Whoop Dee Doo', 'An interactive brain-themed environment for TBA in Portland, made through Whoop Dee Doo. Project photographs by Roger Link.', content, '../../', 'Works'))
+    images = [
+        ('baltimore-performance', 'Performance / constructed set', 'Costumed performers gather around a green-covered table inside a white Whoop Dee Doo set, beneath a large sculptural face.'),
+        ('baltimore-audience', 'Audience', 'An audience wearing red-and-blue glasses watches the show; several people wear bright costumes and face paint.'),
+        ('baltimore-roger', 'In the room / Roger Link in black', 'Roger Link, in black beside a tall blue-costumed figure, among participants and audience members inside the Baltimore show.'),
+    ]
+    figures = []
+    for position, (slug, title, alt) in enumerate(images, start=1):
+        figures.append(f'<figure><a class="image-link" href="../../assets/art/{slug}-1600.webp" data-view-image data-caption="{title}" aria-label="Enlarge: {title}">{image(slug, alt, "../../", lazy=position != 1, sizes="92vw" if position == 1 else "(max-width: 600px) 92vw, 45vw")}</a><figcaption><span>{title}</span><span>{position:02d} / 03</span></figcaption></figure>')
+    content = heading('Whoop Dee Doo / Baltimore', 'Baltimore show', 'A set becomes a gathering.', 'Selected show documentation. Further project details and credits to follow.')
+    content += '<div class="wrap"><div class="series-intro"><p>A Whoop Dee Doo show in Baltimore. These three photographs move from the constructed set and performance to the audience, then back into the shared room. Roger Link appears in black in the final photograph.</p><dl class="series-meta"><div><dt>Project</dt><dd>Whoop Dee Doo</dd></div><div><dt>Location</dt><dd>Baltimore</dd></div><div><dt>Documentation</dt><dd>Performance / Audience / In the room</dd></div><div><dt>Archive</dt><dd><a href="../">Whoop Dee Doo ↗</a></dd></div></dl></div>'
+    content += f'<div class="gallery">{"".join(figures)}</div><nav class="series-pagination" aria-label="Related projects"><a href="../">← Whoop Dee Doo</a><a href="../tba/">TBA installation →</a></nav></div>'
+    content += '<dialog class="viewer" id="viewer" aria-label="Project photograph viewer"><div class="viewer-layout"><div class="viewer-top"><span data-view-position aria-live="polite"></span><button type="button" data-view-close autofocus>Close ×</button></div><figure><img src="" alt=""></figure><div class="viewer-bottom"><span data-view-caption></span><div class="viewer-controls"><button type="button" data-view-previous aria-label="Previous image">← Previous</button><button type="button" data-view-next aria-label="Next image">Next →</button></div></div></div></dialog>'
+    write('whoop-dee-doo/baltimore/index.html', document('Baltimore show — Whoop Dee Doo', 'Three photographs of a Whoop Dee Doo show in Baltimore: performance, audience, and Roger Link in the room.', content, '../../', 'Works'))
+
+
 def main():
     home()
     works()
@@ -217,6 +253,7 @@ def main():
     about()
     unfold()
     experiments()
+    whoop_dee_doo()
     missing = heading('CF / 404', 'Not here<span style="color:var(--rust)">.</span>', 'A different path, perhaps.')
     missing += '<div class="wrap"><div class="prose"><p>This page is not in the Index. Return to the recordings, follow a visual collection, or start again.</p><a class="editorial-link" href="/">Back to the Index <span aria-hidden="true">↗</span></a></div></div>'
     write('404.html', document('Page not found', 'This page is not in the Cancelled Futures Index.', missing, '/'))
