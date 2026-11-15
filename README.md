@@ -35,4 +35,4 @@ Mail and other TXT records are independent of the website and remain in place. T
 
 ## Release updates
 
-Unfold is being prepared for release. The app's development repository is currently [roger-link/phrase-mix](https://github.com/roger-link/phrase-mix). When the renamed Mac build is ready, replace the release section's development link with the verified GitHub Release download. Do not advertise an available download before one exists.
+Unfold is being prepared for release. The app's development repository is [roger-link/unfold](https://github.com/roger-link/unfold). When the renamed Mac build is ready, replace the release section's development link with the verified GitHub Release download. Do not advertise an available download before one exists.
