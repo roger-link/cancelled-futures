@@ -20,7 +20,7 @@ This replacement is published through the existing GitHub Pages source branch, `
 - `/experiments/` and `/experiments/wave-sculpture/`: playable Wave Sculpture in two original versions
 - `/whoop-dee-doo/` and `/whoop-dee-doo/tba/`: collaborative project section and three photographs of the TBA installation in Portland
 - `/whoop-dee-doo/baltimore/`: three show photographs; date, venue, role, and photo credits await further details
-- `/about/`: project context
+- `/about/`: personal introduction and an uncropped photograph credited to Jaimie Warren, supplied as rojair.jpg
 - `/unfold/`: Unfold overview and honest release status
 - `404.html`: custom missing-page response
 
