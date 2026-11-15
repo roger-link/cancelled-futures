@@ -1,0 +1,266 @@
+{
+  "bicycle-arms-480": {
+    "width": 360,
+    "height": 480
+  },
+  "bicycle-arms-960": {
+    "width": 720,
+    "height": 960
+  },
+  "bicycle-arms-1600": {
+    "width": 1200,
+    "height": 1600
+  },
+  "bicycle-overhead-480": {
+    "width": 360,
+    "height": 480
+  },
+  "bicycle-overhead-960": {
+    "width": 720,
+    "height": 960
+  },
+  "bicycle-overhead-1600": {
+    "width": 1200,
+    "height": 1600
+  },
+  "bicycle-alley-480": {
+    "width": 480,
+    "height": 360
+  },
+  "bicycle-alley-960": {
+    "width": 960,
+    "height": 720
+  },
+  "bicycle-alley-1600": {
+    "width": 1600,
+    "height": 1200
+  },
+  "bicycle-legs-480": {
+    "width": 480,
+    "height": 360
+  },
+  "bicycle-legs-960": {
+    "width": 960,
+    "height": 720
+  },
+  "bicycle-legs-1600": {
+    "width": 1600,
+    "height": 1200
+  },
+  "body-observer-480": {
+    "width": 480,
+    "height": 360
+  },
+  "body-observer-960": {
+    "width": 960,
+    "height": 720
+  },
+  "body-observer-1600": {
+    "width": 1600,
+    "height": 1200
+  },
+  "body-arms-480": {
+    "width": 480,
+    "height": 360
+  },
+  "body-arms-960": {
+    "width": 960,
+    "height": 720
+  },
+  "body-arms-1600": {
+    "width": 1600,
+    "height": 1200
+  },
+  "body-pink-480": {
+    "width": 480,
+    "height": 360
+  },
+  "body-pink-960": {
+    "width": 960,
+    "height": 720
+  },
+  "body-pink-1600": {
+    "width": 1600,
+    "height": 1200
+  },
+  "body-hallway-480": {
+    "width": 480,
+    "height": 360
+  },
+  "body-hallway-960": {
+    "width": 960,
+    "height": 720
+  },
+  "body-hallway-1600": {
+    "width": 1600,
+    "height": 1200
+  },
+  "sixteen-tiles-480": {
+    "width": 480,
+    "height": 360
+  },
+  "sixteen-tiles-960": {
+    "width": 640,
+    "height": 480
+  },
+  "sixteen-tiles-1600": {
+    "width": 640,
+    "height": 480
+  },
+  "sixteen-trim-480": {
+    "width": 480,
+    "height": 360
+  },
+  "sixteen-trim-960": {
+    "width": 576,
+    "height": 432
+  },
+  "sixteen-trim-1600": {
+    "width": 576,
+    "height": 432
+  },
+  "drawing-building-480": {
+    "width": 314,
+    "height": 480
+  },
+  "drawing-building-960": {
+    "width": 628,
+    "height": 960
+  },
+  "drawing-building-1600": {
+    "width": 1046,
+    "height": 1600
+  },
+  "drawing-ribbons-480": {
+    "width": 314,
+    "height": 480
+  },
+  "drawing-ribbons-960": {
+    "width": 628,
+    "height": 960
+  },
+  "drawing-ribbons-1600": {
+    "width": 1046,
+    "height": 1600
+  },
+  "drawing-network-480": {
+    "width": 314,
+    "height": 480
+  },
+  "drawing-network-960": {
+    "width": 628,
+    "height": 960
+  },
+  "drawing-network-1600": {
+    "width": 1046,
+    "height": 1600
+  },
+  "drawing-pale-480": {
+    "width": 315,
+    "height": 480
+  },
+  "drawing-pale-960": {
+    "width": 630,
+    "height": 960
+  },
+  "drawing-pale-1600": {
+    "width": 1051,
+    "height": 1600
+  },
+  "drawing-purple-480": {
+    "width": 315,
+    "height": 480
+  },
+  "drawing-purple-960": {
+    "width": 630,
+    "height": 960
+  },
+  "drawing-purple-1600": {
+    "width": 1051,
+    "height": 1600
+  },
+  "facade-stripes-480": {
+    "width": 480,
+    "height": 480
+  },
+  "facade-stripes-960": {
+    "width": 512,
+    "height": 512
+  },
+  "facade-stripes-1600": {
+    "width": 512,
+    "height": 512
+  },
+  "facade-yellow-480": {
+    "width": 480,
+    "height": 480
+  },
+  "facade-yellow-960": {
+    "width": 512,
+    "height": 512
+  },
+  "facade-yellow-1600": {
+    "width": 512,
+    "height": 512
+  },
+  "facade-grid-480": {
+    "width": 480,
+    "height": 480
+  },
+  "facade-grid-960": {
+    "width": 512,
+    "height": 512
+  },
+  "facade-grid-1600": {
+    "width": 512,
+    "height": 512
+  },
+  "room-purple-480": {
+    "width": 480,
+    "height": 480
+  },
+  "room-purple-960": {
+    "width": 512,
+    "height": 512
+  },
+  "room-purple-1600": {
+    "width": 512,
+    "height": 512
+  },
+  "room-green-480": {
+    "width": 480,
+    "height": 480
+  },
+  "room-green-960": {
+    "width": 512,
+    "height": 512
+  },
+  "room-green-1600": {
+    "width": 512,
+    "height": 512
+  },
+  "paper-warm-480": {
+    "width": 360,
+    "height": 480
+  },
+  "paper-warm-960": {
+    "width": 720,
+    "height": 960
+  },
+  "paper-warm-1600": {
+    "width": 1200,
+    "height": 1600
+  },
+  "plastic-memory-480": {
+    "width": 480,
+    "height": 480
+  },
+  "plastic-memory-960": {
+    "width": 960,
+    "height": 960
+  },
+  "plastic-memory-1600": {
+    "width": 1200,
+    "height": 1200
+  }
+}
