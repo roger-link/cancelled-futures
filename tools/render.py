@@ -16,6 +16,7 @@ COLLECTIONS = [
     },
     {
         'slug': 'bicycle-2007', 'title': 'Bicycle, 2007', 'number': 'CF—PH—001',
+        'date': 'April 23, 2007',
         'category': 'photography', 'year': '2007', 'medium': 'Color-inverted photographs',
         'lead': 'A familiar body. An unfamiliar surface.',
         'description': 'A few moments with a bicycle, turned inside out by inverted color.',
@@ -175,7 +176,7 @@ def series():
         for position, (slug, title, alt) in enumerate(collection['images'], start=1):
             caption = escape(title, quote=True)
             figures.append(f'<figure><a class="image-link" href="../../assets/art/{slug}-1600.webp" data-view-image data-caption="{caption}" aria-label="Enlarge: {caption}">{image(slug, alt, "../../", lazy=position != 1, sizes="(max-width: 600px) 92vw, 80vw" if position == 1 else "(max-width: 600px) 92vw, 45vw")}</a><figcaption><span>{title}</span><span>{position:02d} / {len(collection["images"]):02d}</span></figcaption></figure>')
-        content = heading(collection['number'] + ' / ' + collection['year'], collection['title'], collection['lead'])
+        content = heading(collection['number'] + ' / ' + collection.get('date', collection['year']), collection['title'], collection['lead'])
         if collection.get('source'):
             content += f'<div class="wrap"><a class="editorial-link" href="{escape(collection["source"], quote=True)}" style="margin-top:24px">View the Processing scripts <span aria-hidden="true">↗</span></a></div>'
         content += f'<div class="wrap"><div class="series-intro"><p>{collection["description"]}</p><dl class="series-meta"><div><dt>Collection</dt><dd>{collection["medium"]}</dd></div><div><dt>Selection</dt><dd>{len(figures)} works</dd></div><div><dt>Artist</dt><dd>Roger Link</dd></div><div><dt>Archive</dt><dd><a href="../">All collections ↗</a></dd></div></dl></div><div class="gallery">{"".join(figures)}</div>'
