@@ -114,7 +114,7 @@ COLLECTIONS = [
         'date': '2025',
         'category': 'paper', 'year': '2025', 'medium': 'Drawings and works on paper',
         'lead': 'A surface that remembers its earlier marks.',
-        'description': 'Five works on paper, moving from a warm layered surface through open yellow passages, looping colored lines, and white gestures to a dense dark network. Paper texture and overlapping marks remain visible. Captions are descriptive labels rather than formal artwork titles.',
+        'description': 'Five works on paper, with loose lines, layers of color, and traces of earlier marks showing through.',
         'images': [('paper-warm', 'Layered sheet', 'A warm orange and red layered abstraction on paper, with dark loops and partly buried colored marks.'), ('paper-yellow-lines', 'Yellow / wandering lines', 'Dark burgundy lines wander across a pale yellow field with faint green, gray, and white marks on textured paper.'), ('paper-color-loops', 'Colored loops', 'Red, green, blue, ochre, and rose strokes loop across a pale paper ground, interspersed with fine gray lines.'), ('paper-white-gestures', 'White gestures', 'White gestural marks interrupt layered pink, orange, green, and blue forms and fine dark outlines on paper.'), ('paper-dark-network', 'Dark network', 'Dense black looping strokes cross red, magenta, and teal marks, leaving small openings of pale paper.')],
     },
 ]
