@@ -18,7 +18,7 @@ COLLECTIONS = [
         'slug': 'bicycle-2007', 'title': 'Bicycle, 2007', 'number': 'CF—PH—001',
         'category': 'photography', 'year': '2007', 'medium': 'Color-inverted photographs',
         'lead': 'A familiar body. An unfamiliar surface.',
-        'description': 'A short sequence of inverted street photographs: tattooed skin, gloves, wheels, pavement, and a bicycle lifted into the air. Close crops withhold the scene before the wider views return it.',
+        'description': 'A few moments with a bicycle, turned inside out by inverted color.',
         'images': [('bicycle-arms', 'Tattooed arm and gloves', 'A cropped tattooed arm turned cyan beside a bicycle and pale work gloves.'), ('bicycle-legs', 'Legs / wheel', 'Cropped legs, a bicycle wheel, and a pedal against a grid of pavement.'), ('bicycle-alley', 'Seated, in the alley', 'A seated person beside a blue bicycle in a color-inverted brick alley.'), ('bicycle-overhead', 'Bicycle overhead', 'A figure holding a pale bicycle overhead against a brick wall.')],
     },
     {
