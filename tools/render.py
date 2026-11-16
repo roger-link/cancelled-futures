@@ -15,7 +15,7 @@ COLLECTIONS = [
         'images': [('processing-color', 'Color fragments', 'Overlapping angular fragments in pink, violet, blue, red, and orange form a dense image.'), ('processing-pattern', 'Pattern fragments', 'Black-and-white patterned fragments are interspersed with sharp yellow, blue, and magenta shapes.'), ('processing-earth', 'Muted fragments', 'Layered angular fragments of muted brown, gray, green, and cream photographic textures.'), ('processing-ochre', 'Ochre field', 'A dense field of translucent ochre and olive angular shapes against dark gaps.')],
     },
     {
-        'slug': 'bicycle-2007', 'title': 'Bicycle, 2007', 'number': 'CF—PH—001',
+        'slug': 'bicycle-2007', 'title': 'Bicycle', 'number': 'CF—PH—001',
         'date': 'April 23, 2007',
         'category': 'photography', 'year': '2007', 'medium': 'Color-inverted photographs',
         'lead': 'A familiar body. An unfamiliar surface.',
@@ -24,6 +24,7 @@ COLLECTIONS = [
     },
     {
         'slug': 'body-exposure', 'title': 'Body / Exposure', 'number': 'CF—PH—002',
+        'date': 'May 17, 2009',
         'category': 'photography', 'year': '2009', 'medium': 'Photographs',
         'lead': 'Presence, interruption, disappearance.',
         'description': 'Four photographs of people moving, waiting, and fading into the room.',
@@ -31,6 +32,7 @@ COLLECTIONS = [
     },
     {
         'slug': 'sixteen', 'title': 'Sixteen', 'number': 'CF—PH—003',
+        'date': 'August 30–31, 2008',
         'category': 'photography', 'year': '2008', 'medium': 'Photographs',
         'lead': 'Small geometries of an ordinary interior.',
         'description': 'Two selected photographs from an interior sequence: the seams of a dark tiled corner and a narrow line of trim against a teal wall. Light and framing make the everyday surface almost abstract.',
@@ -176,10 +178,11 @@ def series():
         for position, (slug, title, alt) in enumerate(collection['images'], start=1):
             caption = escape(title, quote=True)
             figures.append(f'<figure><a class="image-link" href="../../assets/art/{slug}-1600.webp" data-view-image data-caption="{caption}" aria-label="Enlarge: {caption}">{image(slug, alt, "../../", lazy=position != 1, sizes="(max-width: 600px) 92vw, 80vw" if position == 1 else "(max-width: 600px) 92vw, 45vw")}</a><figcaption><span>{title}</span><span>{position:02d} / {len(collection["images"]):02d}</span></figcaption></figure>')
-        content = heading(collection['number'] + ' / ' + collection.get('date', collection['year']), collection['title'], collection['lead'])
+        content = heading(collection['number'] + ' / ' + collection['year'], collection['title'], collection['lead'])
         if collection.get('source'):
             content += f'<div class="wrap"><a class="editorial-link" href="{escape(collection["source"], quote=True)}" style="margin-top:24px">View the Processing scripts <span aria-hidden="true">↗</span></a></div>'
-        content += f'<div class="wrap"><div class="series-intro"><p>{collection["description"]}</p><dl class="series-meta"><div><dt>Collection</dt><dd>{collection["medium"]}</dd></div><div><dt>Selection</dt><dd>{len(figures)} works</dd></div><div><dt>Artist</dt><dd>Roger Link</dd></div><div><dt>Archive</dt><dd><a href="../">All collections ↗</a></dd></div></dl></div><div class="gallery">{"".join(figures)}</div>'
+        date_details = f'<div><dt>Date</dt><dd>{escape(collection["date"])}</dd></div>' if collection['category'] == 'photography' and collection.get('date') else ''
+        content += f'<div class="wrap"><div class="series-intro"><p>{collection["description"]}</p><dl class="series-meta"><div><dt>Collection</dt><dd>{collection["medium"]}</dd></div>{date_details}<div><dt>Selection</dt><dd>{len(figures)} works</dd></div><div><dt>Artist</dt><dd>Roger Link</dd></div><div><dt>Archive</dt><dd><a href="../">All collections ↗</a></dd></div></dl></div><div class="gallery">{"".join(figures)}</div>'
         previous = COLLECTIONS[(index - 1) % len(COLLECTIONS)]
         following = COLLECTIONS[(index + 1) % len(COLLECTIONS)]
         content += f'<nav class="series-pagination" aria-label="Browse collections"><a href="../{previous["slug"]}/"><small>Previous collection</small>← {previous["title"]}</a><a href="../{following["slug"]}/"><small>Next collection</small>{following["title"]} →</a></nav></div>'

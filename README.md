@@ -24,6 +24,8 @@ This replacement is published through the existing GitHub Pages source branch, `
 - `/unfold/`: Unfold overview and honest release status
 - `404.html`: custom missing-page response
 
+Photography collection details include capture dates read from the original files: Bicycle, April 23, 2007; Body / Exposure, May 17, 2009; Sixteen, August 30–31, 2008. These preserve camera-recorded dates rather than inferring a timezone. The Bicycle title omits its year; its existing URL is unchanged.
+
 Static HTML, CSS, and JavaScript with local WebP artwork and self-hosted fonts. No analytics, cookies, accounts, or external assets are required at runtime. Wave Sculpture uses a locally vendored Three.js 0.160.0 runtime, loaded only after Play; no package installation or build is needed. Font licenses are included in `assets/fonts/`. WebP renditions omit source EXIF metadata, including camera location. Originals remain outside this checkout and are unchanged.
 
 Wave Sculpture preserves the two shader-based versions from rogerlink.com, presented as Warm relief and Color drift. Visitors can play, pause, restart, switch versions, and use fullscreen where supported. Playback pauses when the work is offscreen or the document is hidden; nothing autoplays, including for reduced-motion users. Still images remain available without JavaScript or WebGL. Source provenance and the noise license are in `assets/wave/`; Three.js and its MIT license are in `assets/vendor/three/`. The original rogerlink.com site is unchanged.
