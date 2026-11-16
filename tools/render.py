@@ -49,6 +49,7 @@ COLLECTIONS = [
     },
     {
         'slug': 'drawn-fields', 'title': 'Drawn Fields', 'number': 'CF—DR—001',
+        'date': '2024',
         'category': 'drawing', 'year': '2024', 'medium': 'iPad drawings',
         'lead': 'Lines accumulate. Shapes drift out of alignment.',
         'description': 'Drawings made on an iPad, moving between tangled lines, bright shapes, and quieter washes of color. Captions describe the images rather than give them formal titles.',
@@ -205,7 +206,7 @@ def series():
         content = heading(collection['number'] + ' / ' + collection['year'], collection['title'], collection['lead'])
         if collection.get('source'):
             content += f'<div class="wrap"><a class="editorial-link" href="{escape(collection["source"], quote=True)}" style="margin-top:24px">View the Processing scripts <span aria-hidden="true">↗</span></a></div>'
-        date_details = f'<div><dt>Date</dt><dd>{escape(collection["date"])}</dd></div>' if collection['category'] == 'photography' and collection.get('date') else ''
+        date_details = f'<div><dt>Date</dt><dd>{escape(collection["date"])}</dd></div>' if collection.get('date') else ''
         content += f'<div class="wrap"><div class="series-intro"><p>{collection["description"]}</p><dl class="series-meta"><div><dt>Collection</dt><dd>{collection["medium"]}</dd></div>{date_details}<div><dt>Selection</dt><dd>{len(figures)} works</dd></div><div><dt>Artist</dt><dd>Roger Link</dd></div><div><dt>Archive</dt><dd><a href="../">All collections ↗</a></dd></div></dl></div><div class="gallery">{"".join(figures)}</div>'
         previous = COLLECTIONS[(index - 1) % len(COLLECTIONS)]
         following = COLLECTIONS[(index + 1) % len(COLLECTIONS)]
