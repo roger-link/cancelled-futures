@@ -778,5 +778,41 @@
   "room-red-frame-1600": {
     "width": 512,
     "height": 512
+  },
+  "facade-dotted-bands-480": {
+    "width": 480,
+    "height": 480
+  },
+  "facade-dotted-bands-960": {
+    "width": 512,
+    "height": 512
+  },
+  "facade-dotted-bands-1600": {
+    "width": 512,
+    "height": 512
+  },
+  "facade-yellow-markers-480": {
+    "width": 480,
+    "height": 480
+  },
+  "facade-yellow-markers-960": {
+    "width": 512,
+    "height": 512
+  },
+  "facade-yellow-markers-1600": {
+    "width": 512,
+    "height": 512
+  },
+  "facade-yellow-lattice-480": {
+    "width": 480,
+    "height": 480
+  },
+  "facade-yellow-lattice-960": {
+    "width": 512,
+    "height": 512
+  },
+  "facade-yellow-lattice-1600": {
+    "width": 512,
+    "height": 512
   }
 }

@@ -99,8 +99,15 @@ COLLECTIONS = [
         'slug': 'facades-grids', 'title': 'Facades / Grids', 'number': 'CF—DS—001',
         'category': 'spatial', 'year': '2022', 'medium': 'Digital image studies',
         'lead': 'A system, interrupted.',
-        'description': 'Stripes, windows, and repeated divisions become color structures. A small dark box, a doorway, or an uneven grid interrupts the apparent order. Three selected image studies.',
-        'images': [('facade-stripes', 'Stripes / dark box', 'A small dark box interrupts dense vertical green, white, blue, and red stripes.'), ('facade-yellow', 'Yellow facade', 'A pale yellow building with a blue central door beneath a flat pink sky.'), ('facade-grid', 'Window grid', 'A blue and green facade divided by an irregular pale window grid.')],
+        'description': 'Six studies of stripes, windows, and grids, with bright blocks of color breaking up the pattern.',
+        'images': [
+            ('facade-stripes', 'Stripes / dark box', 'A small dark box interrupts dense vertical green, white, blue, and red stripes.'),
+            ('facade-yellow-markers', 'Yellow markers', 'Small yellow rectangles interrupt dark vertical stripes, pale bars, and blue bands.'),
+            ('facade-dotted-bands', 'Dots / bands', 'Rows of black dots overlap vivid pink, yellow, cyan, and green horizontal bands.'),
+            ('facade-yellow', 'Yellow facade', 'A pale yellow building with a blue central door beneath a flat pink sky.'),
+            ('facade-grid', 'Window grid', 'A blue and green facade divided by an irregular pale window grid.'),
+            ('facade-yellow-lattice', 'Yellow lattice', 'Bright yellow horizontal rails divide repeated purple, green, and blue window-like openings.'),
+        ],
     },
     {
         'slug': 'rooms-without-occupants', 'title': 'Somewhere Between', 'number': 'CF—DS—002',
