@@ -62,8 +62,8 @@ COLLECTIONS = [
     },
     {
         'slug': 'everyday', 'title': 'Everyday', 'number': 'CF—PH—005',
-        'date': 'To confirm',
-        'category': 'photography', 'year': 'Year to confirm', 'medium': 'Photographs',
+        'date': '2010',
+        'category': 'photography', 'year': '2010', 'medium': 'Photographs',
         'lead': 'Small things, noticed.',
         'description': 'An orange-dusted hand, a yellow tiled corner, and two cardboard paths that end at brick walls.',
         'images': [

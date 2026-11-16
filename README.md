@@ -13,7 +13,7 @@ This replacement is published through the existing GitHub Pages source branch, `
 - `/works/body-exposure/`: four photographs, including the hallway closing frame
 - `/works/sixteen/`: eight photographs, ending with a pool seen from a high window
 - `/works/flowers-out-of-focus/`: four flower photographs, October 17, 2008
-- `/works/everyday/`: Chips, Yellow wall, and the Desire Lines pair, grouped as four photographs; dates await confirmation
+- `/works/everyday/`: Chips, Yellow wall, and the Desire Lines pair, grouped as four photographs, 2010
 - `/works/chips/` and `/works/desire-lines/`: retained links redirecting to Everyday
 - `/works/drawn-fields/`: fourteen iPad drawings, 2024
 - `/works/processing-studies/`: four still outputs from Processing scripts, also linked from Experiments; year awaits confirmation
@@ -35,7 +35,7 @@ Wave Sculpture preserves the two shader-based versions from rogerlink.com, prese
 
 The 52 static archive works build on the initial second-review selection, including the expanded fourteen-drawing iPad collection, four later paper works, four Processing outputs, the expanded eight-photo Sixteen sequence, four flower photographs, and four Everyday photographs; they are not the entire eventual archive. Whoop Dee Doo has a separate collaborative project section. Its initial TBA page uses three photographs supplied by Roger, with project details and design credits taken from his earlier TBA portfolio entry. No project year is assigned. The source collection records and shared templates are in `tools/render.py`; run `python3 tools/render.py` after editing copy, sequence, or metadata. The generated HTML files are served directly; no server-side Python is needed. Responsive rendition sizes are recorded in `assets/art/dimensions.json`.
 
-Everyday groups chips.jpg, dbcoopers_wall.jpg, desire_lines_1.jpg, and desire_lines_2.jpg from Roger's shared archive folder. None contains DateTimeOriginal, so capture dates remain unconfirmed; Drive upload and modification dates are not substituted. The description identifies what the photographs show without assigning authorship of the cardboard interventions. Web copies preserve full composition and color without upscaling. Sixteen remains its original eight-photo selection.
+Everyday groups chips.jpg, dbcoopers_wall.jpg, desire_lines_1.jpg, and desire_lines_2.jpg from Roger's shared archive folder. Roger confirmed 2010 for the collection; source files lack DateTimeOriginal, and Drive upload and modification dates are not substituted. The description identifies what the photographs show without assigning authorship of the cardboard interventions. Web copies preserve full composition and color without upscaling. Sixteen remains its original eight-photo selection.
 
 Flowers uses IMG_0439.jpg, IMG_0458.jpg, IMG_0434.jpg, and IMG_0464.jpg in that order. October 17, 2008 comes from DateTimeOriginal in all four source files, not the later modification or Drive upload timestamps. Web copies preserve composition and color without cropping, sharpening, or upscaling. Descriptive captions are working labels.
 
