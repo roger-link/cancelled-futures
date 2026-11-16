@@ -766,5 +766,17 @@
   "room-blue-1600": {
     "width": 512,
     "height": 512
+  },
+  "room-red-frame-480": {
+    "width": 480,
+    "height": 480
+  },
+  "room-red-frame-960": {
+    "width": 512,
+    "height": 512
+  },
+  "room-red-frame-1600": {
+    "width": 512,
+    "height": 512
   }
 }

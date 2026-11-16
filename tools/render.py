@@ -106,8 +106,8 @@ COLLECTIONS = [
         'slug': 'rooms-without-occupants', 'title': 'Somewhere Between', 'number': 'CF—DS—002',
         'category': 'spatial', 'year': '2022', 'medium': 'Digital image studies',
         'lead': 'Openings without a clear destination.',
-        'description': 'Three spaces shaped by colored walls, openings, and light. Somewhere familiar, but hard to place.',
-        'images': [('room-purple', 'Purple room', 'A purple room with ochre doorways and an apparently displaced rectangular plane of light.'), ('room-green', 'Green opening', 'A green rectangular opening in a pale room bordered by pink walls.'), ('room-blue', 'Blue opening', 'A blue rectangular opening glows in a pale turquoise space beside a dark angular foreground.')],
+        'description': 'Four spaces shaped by colored walls, openings, and light. Somewhere familiar, but hard to place.',
+        'images': [('room-purple', 'Purple room', 'A purple room with ochre doorways and an apparently displaced rectangular plane of light.'), ('room-green', 'Green opening', 'A green rectangular opening in a pale room bordered by pink walls.'), ('room-blue', 'Blue opening', 'A blue rectangular opening glows in a pale turquoise space beside a dark angular foreground.'), ('room-red-frame', 'Red frame', 'A glowing red rectangular frame surrounds a dark opening, with a smaller pale cyan opening beyond it.')],
     },
     {
         'slug': 'works-on-paper', 'title': 'Works on Paper', 'number': 'CF—WP—001',
