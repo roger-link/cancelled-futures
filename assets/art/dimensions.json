@@ -658,5 +658,53 @@
   "drawing-layered-gestures-1600": {
     "width": 1051,
     "height": 1600
+  },
+  "flowers-pale-480": {
+    "width": 480,
+    "height": 320
+  },
+  "flowers-pale-960": {
+    "width": 700,
+    "height": 467
+  },
+  "flowers-pale-1600": {
+    "width": 700,
+    "height": 467
+  },
+  "flowers-pink-480": {
+    "width": 480,
+    "height": 320
+  },
+  "flowers-pink-960": {
+    "width": 700,
+    "height": 467
+  },
+  "flowers-pink-1600": {
+    "width": 700,
+    "height": 467
+  },
+  "flowers-yellow-480": {
+    "width": 480,
+    "height": 320
+  },
+  "flowers-yellow-960": {
+    "width": 700,
+    "height": 467
+  },
+  "flowers-yellow-1600": {
+    "width": 700,
+    "height": 467
+  },
+  "flowers-sunflower-480": {
+    "width": 480,
+    "height": 320
+  },
+  "flowers-sunflower-960": {
+    "width": 700,
+    "height": 467
+  },
+  "flowers-sunflower-1600": {
+    "width": 700,
+    "height": 467
   }
 }

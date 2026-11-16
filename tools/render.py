@@ -48,6 +48,19 @@ COLLECTIONS = [
         ],
     },
     {
+        'slug': 'flowers-out-of-focus', 'title': 'Flowers, Out of Focus', 'number': 'CF—PH—004',
+        'date': 'October 17, 2008',
+        'category': 'photography', 'year': '2008', 'medium': 'Photographs',
+        'lead': 'Flowers becoming color.',
+        'description': 'Four photographs of flowers, softened into patches of pink, yellow, green, and white.',
+        'images': [
+            ('flowers-pale', 'Pale flowers', 'Soft white and pink flower shapes against a deep green background.'),
+            ('flowers-pink', 'Pink', 'Bright pink clusters and dark gaps beside a pale green diagonal.'),
+            ('flowers-yellow', 'Yellow', 'A broad wash of golden yellow interrupted by dark green and brown shapes.'),
+            ('flowers-sunflower', 'Sunflower', 'An out-of-focus sunflower fills the lower edge beneath a dark green background.'),
+        ],
+    },
+    {
         'slug': 'drawn-fields', 'title': 'Drawn Fields', 'number': 'CF—DR—001',
         'date': '2024',
         'category': 'drawing', 'year': '2024', 'medium': 'iPad drawings',
