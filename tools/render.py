@@ -26,7 +26,7 @@ COLLECTIONS = [
         'slug': 'body-exposure', 'title': 'Body / Exposure', 'number': 'CF—PH—002',
         'category': 'photography', 'year': '2009', 'medium': 'Photographs',
         'lead': 'Presence, interruption, disappearance.',
-        'description': 'Moving bodies and still rooms, recorded at different speeds. A figure gathers and disperses; a seated observer remains. Four photographs arranged as a sequence rather than a collection of blur effects.',
+        'description': 'Four photographs of people moving, waiting, and fading into the room.',
         'images': [('body-pink', 'Pink room', 'A dark moving figure in a pink-lit room.'), ('body-arms', 'Extended arms', 'An indistinct blue-lit figure with extended arms.'), ('body-observer', 'Figure and observer', 'A large blue apparition above a small seated person in the same room.'), ('body-hallway', 'Hallway', 'Overlapping dark figures disperse through a dim hallway toward a patch of light.')],
     },
     {
