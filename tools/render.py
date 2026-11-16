@@ -103,11 +103,11 @@ COLLECTIONS = [
         'images': [('facade-stripes', 'Stripes / dark box', 'A small dark box interrupts dense vertical green, white, blue, and red stripes.'), ('facade-yellow', 'Yellow facade', 'A pale yellow building with a blue central door beneath a flat pink sky.'), ('facade-grid', 'Window grid', 'A blue and green facade divided by an irregular pale window grid.')],
     },
     {
-        'slug': 'rooms-without-occupants', 'title': 'Rooms Without Occupants', 'number': 'CF—DS—002',
+        'slug': 'rooms-without-occupants', 'title': 'Somewhere Between', 'number': 'CF—DS—002',
         'category': 'spatial', 'year': '2022', 'medium': 'Digital image studies',
         'lead': 'Openings without a clear destination.',
-        'description': 'Two empty spaces organized by colored walls, apertures, and displaced planes of light. The absence of occupants leaves the geometry unresolved.',
-        'images': [('room-purple', 'Purple room', 'A purple room with ochre doorways and an apparently displaced rectangular plane of light.'), ('room-green', 'Green opening', 'A green rectangular opening in a pale room bordered by pink walls.')],
+        'description': 'Three spaces shaped by colored walls, openings, and light. Somewhere familiar, but hard to place.',
+        'images': [('room-purple', 'Purple room', 'A purple room with ochre doorways and an apparently displaced rectangular plane of light.'), ('room-green', 'Green opening', 'A green rectangular opening in a pale room bordered by pink walls.'), ('room-blue', 'Blue opening', 'A blue rectangular opening glows in a pale turquoise space beside a dark angular foreground.')],
     },
     {
         'slug': 'works-on-paper', 'title': 'Works on Paper', 'number': 'CF—WP—001',

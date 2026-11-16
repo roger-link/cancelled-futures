@@ -754,5 +754,17 @@
   "everyday-yellow-wall-1600": {
     "width": 640,
     "height": 480
+  },
+  "room-blue-480": {
+    "width": 480,
+    "height": 480
+  },
+  "room-blue-960": {
+    "width": 512,
+    "height": 512
+  },
+  "room-blue-1600": {
+    "width": 512,
+    "height": 512
   }
 }
