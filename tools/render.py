@@ -48,7 +48,7 @@ COLLECTIONS = [
         ],
     },
     {
-        'slug': 'flowers-out-of-focus', 'title': 'Flowers, Out of Focus', 'number': 'CF—PH—004',
+        'slug': 'flowers-out-of-focus', 'title': 'Flowers', 'number': 'CF—PH—004',
         'date': 'October 17, 2008',
         'category': 'photography', 'year': '2008', 'medium': 'Photographs',
         'lead': 'Flowers becoming color.',
