@@ -61,6 +61,25 @@ COLLECTIONS = [
         ],
     },
     {
+        'slug': 'chips', 'title': 'Chips', 'number': 'CF—PH—005',
+        'date': 'To confirm',
+        'category': 'photography', 'year': 'Year to confirm', 'medium': 'Photograph',
+        'lead': 'After the chips.',
+        'description': 'An orange-dusted hand against a teal wall.',
+        'images': [('chips-hand', 'Chips', 'An open hand covered in orange chip dust against a teal wall.')],
+    },
+    {
+        'slug': 'desire-lines', 'title': 'Desire Lines', 'number': 'CF—PH—006',
+        'date': 'To confirm',
+        'category': 'photography', 'year': 'Year to confirm', 'medium': 'Photographs',
+        'lead': 'Paths that end at a wall.',
+        'description': 'Two photographs of cardboard paths leading across pavement and grass to brick walls.',
+        'images': [
+            ('desire-lines-pavement', 'Pavement', 'Overlapping pieces of cardboard cross dark pavement toward a pale brick wall and weeds.'),
+            ('desire-lines-grass', 'Grass', 'A narrow cardboard path crosses green grass and ends at a red and green brick wall.'),
+        ],
+    },
+    {
         'slug': 'drawn-fields', 'title': 'Drawn Fields', 'number': 'CF—DR—001',
         'date': '2024',
         'category': 'drawing', 'year': '2024', 'medium': 'iPad drawings',
@@ -220,7 +239,8 @@ def series():
         if collection.get('source'):
             content += f'<div class="wrap"><a class="editorial-link" href="{escape(collection["source"], quote=True)}" style="margin-top:24px">View the Processing scripts <span aria-hidden="true">↗</span></a></div>'
         date_details = f'<div><dt>Date</dt><dd>{escape(collection["date"])}</dd></div>' if collection.get('date') else ''
-        content += f'<div class="wrap"><div class="series-intro"><p>{collection["description"]}</p><dl class="series-meta"><div><dt>Collection</dt><dd>{collection["medium"]}</dd></div>{date_details}<div><dt>Selection</dt><dd>{len(figures)} works</dd></div><div><dt>Artist</dt><dd>Roger Link</dd></div><div><dt>Archive</dt><dd><a href="../">All collections ↗</a></dd></div></dl></div><div class="gallery">{"".join(figures)}</div>'
+        selection = f'{len(figures)} {"work" if len(figures) == 1 else "works"}'
+        content += f'<div class="wrap"><div class="series-intro"><p>{collection["description"]}</p><dl class="series-meta"><div><dt>Collection</dt><dd>{collection["medium"]}</dd></div>{date_details}<div><dt>Selection</dt><dd>{selection}</dd></div><div><dt>Artist</dt><dd>Roger Link</dd></div><div><dt>Archive</dt><dd><a href="../">All collections ↗</a></dd></div></dl></div><div class="gallery">{"".join(figures)}</div>'
         previous = COLLECTIONS[(index - 1) % len(COLLECTIONS)]
         following = COLLECTIONS[(index + 1) % len(COLLECTIONS)]
         content += f'<nav class="series-pagination" aria-label="Browse collections"><a href="../{previous["slug"]}/"><small>Previous collection</small>← {previous["title"]}</a><a href="../{following["slug"]}/"><small>Next collection</small>{following["title"]} →</a></nav></div>'

@@ -706,5 +706,41 @@
   "flowers-sunflower-1600": {
     "width": 700,
     "height": 467
+  },
+  "chips-hand-480": {
+    "width": 320,
+    "height": 480
+  },
+  "chips-hand-960": {
+    "width": 427,
+    "height": 640
+  },
+  "chips-hand-1600": {
+    "width": 427,
+    "height": 640
+  },
+  "desire-lines-pavement-480": {
+    "width": 320,
+    "height": 480
+  },
+  "desire-lines-pavement-960": {
+    "width": 400,
+    "height": 600
+  },
+  "desire-lines-pavement-1600": {
+    "width": 400,
+    "height": 600
+  },
+  "desire-lines-grass-480": {
+    "width": 320,
+    "height": 480
+  },
+  "desire-lines-grass-960": {
+    "width": 400,
+    "height": 600
+  },
+  "desire-lines-grass-1600": {
+    "width": 400,
+    "height": 600
   }
 }
