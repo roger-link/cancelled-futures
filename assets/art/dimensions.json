@@ -586,5 +586,77 @@
   "sixteen-pool-1600": {
     "width": 480,
     "height": 640
+  },
+  "drawing-night-blooms-480": {
+    "width": 339,
+    "height": 480
+  },
+  "drawing-night-blooms-960": {
+    "width": 679,
+    "height": 960
+  },
+  "drawing-night-blooms-1600": {
+    "width": 1131,
+    "height": 1600
+  },
+  "drawing-clustered-outlines-480": {
+    "width": 339,
+    "height": 480
+  },
+  "drawing-clustered-outlines-960": {
+    "width": 679,
+    "height": 960
+  },
+  "drawing-clustered-outlines-1600": {
+    "width": 1131,
+    "height": 1600
+  },
+  "drawing-drawn-city-480": {
+    "width": 339,
+    "height": 480
+  },
+  "drawing-drawn-city-960": {
+    "width": 679,
+    "height": 960
+  },
+  "drawing-drawn-city-1600": {
+    "width": 1131,
+    "height": 1600
+  },
+  "drawing-lavender-480": {
+    "width": 339,
+    "height": 480
+  },
+  "drawing-lavender-960": {
+    "width": 679,
+    "height": 960
+  },
+  "drawing-lavender-1600": {
+    "width": 1131,
+    "height": 1600
+  },
+  "drawing-blue-wash-480": {
+    "width": 339,
+    "height": 480
+  },
+  "drawing-blue-wash-960": {
+    "width": 679,
+    "height": 960
+  },
+  "drawing-blue-wash-1600": {
+    "width": 1131,
+    "height": 1600
+  },
+  "drawing-layered-gestures-480": {
+    "width": 315,
+    "height": 480
+  },
+  "drawing-layered-gestures-960": {
+    "width": 630,
+    "height": 960
+  },
+  "drawing-layered-gestures-1600": {
+    "width": 1051,
+    "height": 1600
   }
 }
