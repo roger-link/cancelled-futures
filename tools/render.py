@@ -61,22 +61,16 @@ COLLECTIONS = [
         ],
     },
     {
-        'slug': 'chips', 'title': 'Chips', 'number': 'CF—PH—005',
-        'date': 'To confirm',
-        'category': 'photography', 'year': 'Year to confirm', 'medium': 'Photograph',
-        'lead': 'After the chips.',
-        'description': 'An orange-dusted hand against a teal wall.',
-        'images': [('chips-hand', 'Chips', 'An open hand covered in orange chip dust against a teal wall.')],
-    },
-    {
-        'slug': 'desire-lines', 'title': 'Desire Lines', 'number': 'CF—PH—006',
+        'slug': 'everyday', 'title': 'Everyday', 'number': 'CF—PH—005',
         'date': 'To confirm',
         'category': 'photography', 'year': 'Year to confirm', 'medium': 'Photographs',
-        'lead': 'Paths that end at a wall.',
-        'description': 'Two photographs of cardboard paths leading across pavement and grass to brick walls.',
+        'lead': 'Small things, noticed.',
+        'description': 'An orange-dusted hand, a yellow tiled corner, and two cardboard paths that end at brick walls.',
         'images': [
-            ('desire-lines-pavement', 'Pavement', 'Overlapping pieces of cardboard cross dark pavement toward a pale brick wall and weeds.'),
-            ('desire-lines-grass', 'Grass', 'A narrow cardboard path crosses green grass and ends at a red and green brick wall.'),
+            ('chips-hand', 'Chips', 'An open hand covered in orange chip dust against a teal wall.'),
+            ('everyday-yellow-wall', 'Yellow wall', 'Warm yellow tiles meet at a corner, with dark grout lines crossing both walls.'),
+            ('desire-lines-pavement', 'Desire Lines / pavement', 'Overlapping pieces of cardboard cross dark pavement toward a pale brick wall and weeds.'),
+            ('desire-lines-grass', 'Desire Lines / grass', 'A narrow cardboard path crosses green grass and ends at a red and green brick wall.'),
         ],
     },
     {
@@ -322,10 +316,20 @@ def whoop_dee_doo():
     write('whoop-dee-doo/baltimore/index.html', document('Baltimore show — Whoop Dee Doo', 'Three photographs of a Whoop Dee Doo show in Baltimore: performance, audience, and Roger Link in the room.', content, '../../', 'Works'))
 
 
+def collection_redirects():
+    for slug in ('chips', 'desire-lines'):
+        content = heading('CF / Visual archive', 'Everyday', 'These photographs now live together.')
+        content += '<div class="wrap"><a class="editorial-link" href="../everyday/">Open Everyday <span aria-hidden="true">↗</span></a></div>'
+        page = document('Everyday', 'Chips, Yellow wall, and Desire Lines are now grouped in Everyday.', content, '../../', 'Works')
+        page = page.replace('</head>', '<link rel="canonical" href="https://cancelledfutures.com/works/everyday/">\n<meta http-equiv="refresh" content="0; url=../everyday/">\n</head>')
+        write(f'works/{slug}/index.html', page)
+
+
 def main():
     home()
     works()
     series()
+    collection_redirects()
     recordings()
     about()
     unfold()

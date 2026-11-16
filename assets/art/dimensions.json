@@ -742,5 +742,17 @@
   "desire-lines-grass-1600": {
     "width": 400,
     "height": 600
+  },
+  "everyday-yellow-wall-480": {
+    "width": 480,
+    "height": 360
+  },
+  "everyday-yellow-wall-960": {
+    "width": 640,
+    "height": 480
+  },
+  "everyday-yellow-wall-1600": {
+    "width": 640,
+    "height": 480
   }
 }
