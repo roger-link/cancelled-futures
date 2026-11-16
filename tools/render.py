@@ -65,12 +65,11 @@ COLLECTIONS = [
         'date': '2010',
         'category': 'photography', 'year': '2010', 'medium': 'Photographs',
         'lead': 'Small things, noticed.',
-        'description': 'An orange-dusted hand, a yellow tiled corner, and two cardboard paths that end at brick walls.',
+        'description': 'An orange-dusted hand, a yellow tiled corner, and a cardboard path that ends at a brick wall.',
         'images': [
             ('chips-hand', 'Chips', 'An open hand covered in orange chip dust against a teal wall.'),
             ('everyday-yellow-wall', 'Yellow wall', 'Warm yellow tiles meet at a corner, with dark grout lines crossing both walls.'),
             ('desire-lines-pavement', 'Desire Lines / pavement', 'Overlapping pieces of cardboard cross dark pavement toward a pale brick wall and weeds.'),
-            ('desire-lines-grass', 'Desire Lines / grass', 'A narrow cardboard path crosses green grass and ends at a red and green brick wall.'),
         ],
     },
     {
