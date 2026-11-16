@@ -111,6 +111,7 @@ COLLECTIONS = [
     },
     {
         'slug': 'works-on-paper', 'title': 'Works on Paper', 'number': 'CF—WP—001',
+        'date': 'June 3, 2025 (photographed)',
         'category': 'paper', 'year': '2025', 'medium': 'Drawings and works on paper',
         'lead': 'A surface that remembers its earlier marks.',
         'description': 'Five works on paper, moving from a warm layered surface through open yellow passages, looping colored lines, and white gestures to a dense dark network. Paper texture and overlapping marks remain visible. Captions are descriptive labels rather than formal artwork titles.',

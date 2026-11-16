@@ -19,7 +19,7 @@ This replacement is published through the existing GitHub Pages source branch, `
 - `/works/processing-studies/`: four still outputs from Processing scripts, also linked from Experiments; year awaits confirmation
 - `/works/facades-grids/`: three spatial studies
 - `/works/rooms-without-occupants/`: two spatial studies
-- `/works/works-on-paper/`: five drawings and works on paper, 2025
+- `/works/works-on-paper/`: five drawings and works on paper; photographed June 3, 2025, confirmed by DateTimeOriginal in all five source photographs, not a confirmed artwork creation date
 - `/experiments/` and `/experiments/wave-sculpture/`: playable Wave Sculpture in two original versions
 - `/whoop-dee-doo/` and `/whoop-dee-doo/tba/`: collaborative project section and three photographs of the TBA installation in Portland
 - `/whoop-dee-doo/baltimore/`: three show photographs; date, venue, role, and photo credits await further details
