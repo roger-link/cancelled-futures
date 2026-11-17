@@ -127,6 +127,18 @@ COLLECTIONS = [
 ]
 
 
+PROJECT_DATES = {
+    'tba': '2011',
+    'baltimore': '2012',
+    'wave-sculpture': 'To confirm',
+    'unfold': 'To confirm',
+}
+
+
+def date_detail(value, label='Date'):
+    return f'<div><dt>{escape(label)}</dt><dd>{escape(value)}</dd></div>'
+
+
 def image(slug, alt, prefix, lazy=True, sizes='(max-width: 600px) 92vw, 48vw'):
     loading = ' loading="lazy"' if lazy else ' fetchpriority="high"'
     variants = {}
@@ -239,7 +251,8 @@ def series():
         content = heading(collection['number'] + ' / ' + collection['year'], collection['title'], collection['lead'])
         if collection.get('source'):
             content += f'<div class="wrap"><a class="editorial-link" href="{escape(collection["source"], quote=True)}" style="margin-top:24px">View the Processing scripts <span aria-hidden="true">↗</span></a></div>'
-        date_details = f'<div><dt>Date</dt><dd>{escape(collection["date"])}</dd></div>' if collection.get('date') else ''
+        collection_date = collection.get('date') or (collection['year'] if collection['year'].isdigit() else 'To confirm')
+        date_details = date_detail(collection_date)
         selection = f'{len(figures)} {"work" if len(figures) == 1 else "works"}'
         content += f'<div class="wrap"><div class="series-intro"><p>{collection["description"]}</p><dl class="series-meta"><div><dt>Collection</dt><dd>{collection["medium"]}</dd></div>{date_details}<div><dt>Selection</dt><dd>{selection}</dd></div><div><dt>Artist</dt><dd>Roger Link</dd></div><div><dt>Archive</dt><dd><a href="../">All collections ↗</a></dd></div></dl></div><div class="gallery">{"".join(figures)}</div>'
         previous = COLLECTIONS[(index - 1) % len(COLLECTIONS)]
@@ -254,6 +267,7 @@ def recordings():
     content += f'<div class="wrap"><section class="record-page"><a href="plastic-memory/" aria-label="Explore Plastic Memory">{album_art("../")}</a><div><p class="kicker">CF—REC—001 / Forthcoming</p><h2 class="record-title">Plastic Memory</h2><p class="lead serif">Electronic recordings.<br>Patterns, fragments, and things left open.</p><p>A forthcoming album by Cancelled Futures. Listening details will be added when the album is available.</p><a class="editorial-link" href="plastic-memory/">Recording notes <span aria-hidden="true">↗</span></a></div></section></div>'
     write('recordings/index.html', document('Recordings', 'Plastic Memory, a forthcoming album by Cancelled Futures.', content, '../', 'Recordings'))
     content = f'<div class="wrap"><section class="record-page"><figure>{album_art("../../")}<figcaption class="meta" style="margin-top:12px">Plastic Memory / Original cover artwork</figcaption></figure><div><p class="kicker">Current work / CF—REC—001</p><h1>Plastic<br>Memory</h1><p class="lead serif">Music and other accidents.</p><p>Electronic recordings by Cancelled Futures.</p><p><span class="status-line mono">Forthcoming</span></p><p>Listening details, release information, and album notes will be added here when the recording is ready to share.</p><a class="editorial-link" href="../../works/">Explore the visual archive <span aria-hidden="true">↗</span></a><p class="meta" style="margin-top:28px">No release date announced.</p></div></section><nav class="series-pagination" aria-label="Related work"><a href="../">← All recordings</a><a href="../../unfold/">Unfold →</a></nav></div>'
+    content = content.replace('<p class="meta" style="margin-top:28px">No release date announced.</p>', f'<dl class="series-meta" style="margin-top:28px">{date_detail("Not announced", "Release date")}</dl>')
     write('recordings/plastic-memory/index.html', document('Plastic Memory', 'Plastic Memory, forthcoming electronic recordings by Cancelled Futures. Listening details to follow.', content, '../../', 'Recordings'))
 
 
@@ -269,6 +283,7 @@ def unfold():
     rows = ''.join(f'<div class="phrase-row"><span class="phrase-name">{label}</span><div class="note-grid" data-row="{index}"></div></div>' for index, label in enumerate(('01 / Begin', '02 / Follow', '03 / Respond')))
     content = heading('CF / Instruments / In development', 'Unfold<span style="color:var(--rust)">.</span>', 'An instrument for surprising yourself.')
     content += f'<div class="wrap"><section class="instrument-grid"><div><div class="instrument-art" role="img" aria-label="Visual phrase illustration, not the app interface. No audio.">{rows}</div><div class="pattern-caption"><span>Phrase illustration / No audio</span><button type="button" id="new-pattern">Another possibility ↻</button></div><p class="visually-hidden" id="pattern-status" role="status" aria-live="polite"></p><noscript><p class="meta">Enable JavaScript to explore the visual phrase illustration.</p></noscript></div><div class="instrument-copy"><p class="kicker">Generative music studio / Mac</p><h2>Start with a phrase.<br><span class="serif">See what unfolds.</span></h2><p>Build a phrase, bring in related voices, and shape the music as it plays. Keep an idea you like. Record what happens.</p><p>Explore Still, Drift, and Renew behavior. Save editable Pieces and Keep snapshots, then record a stereo take and export a WAV.</p><p class="mono"><span class="status-line">Mac release in preparation</span></p><p>Free and open source. The first public Mac download is being prepared.</p><a class="editorial-link" href="https://github.com/roger-link/unfold">Follow the project <span aria-hidden="true">↗</span></a><p class="meta" style="margin-top:20px">Planned licence: AGPL-3.0-only.<br>Music you make with it is yours.</p></div></section></div>'
+    content = content.replace('<p class="mono">', f'<dl class="series-meta">{date_detail(PROJECT_DATES["unfold"])}</dl><p class="mono">', 1)
     write('unfold/index.html', document('Unfold', 'A generative music studio for Mac by Cancelled Futures. Free and open source; release in preparation.', content, '../', 'Instruments', extra_script='<script src="../assets/pattern.js" defer></script>'))
 
 
@@ -286,6 +301,7 @@ def experiments():
       <p class="wave-status" data-wave-status role="status" aria-live="polite">Still frame shown. Press Play to run the original JavaScript artwork.</p><noscript><p>JavaScript and WebGL are needed to play this work. A still frame is shown above.</p></noscript>
       </section><div class="wave-notes"><p>Two versions of the work originally presented on <a class="editorial-link" href="https://rogerlink.com/">rogerlink.com ↗</a>. The warm version emphasizes relief and material depth; the other lets color drift further. These labels distinguish the versions, rather than assigning new titles to separate works.</p><p>Made by Roger Link using JavaScript, Three.js, and custom shaders. Generated live in your browser, not a recorded video. Each restart begins a fresh run. Playback pauses when the work leaves the screen or the tab is hidden.</p></div><nav class="series-pagination" aria-label="Related work"><a href="../">← All experiments</a><a href="../../works/">Visual archive →</a></nav></div>'''
     scripts = '<link rel="stylesheet" href="../../assets/wave/player.css"><script src="../../assets/wave/player.js" defer></script>'
+    content = content.replace('<div class="wave-notes">', f'<dl class="series-meta">{date_detail(PROJECT_DATES["wave-sculpture"])}</dl><div class="wave-notes">', 1)
     write('experiments/wave-sculpture/index.html', document('Wave Sculpture', 'A real-time generative moving image by Roger Link. Play two versions of the original JavaScript artwork.', content, '../../', 'Experiments', extra_script=scripts))
 
 
@@ -294,6 +310,8 @@ def whoop_dee_doo():
     content += f'<div class="wrap"><section class="record-page"><a href="tba/" aria-label="Explore the TBA installation">{image("tba-room", "Reflective walls, colored light, a sculptural brain, and a projection inside the TBA installation.", "../", lazy=False)}</a><div><p class="kicker">Installation / Portland</p><h2 class="record-title">TBA installation</h2><p class="lead serif">A room for the brain.</p><p>An interactive environment made through Whoop Dee Doo for the Time-Based Art Festival. Found materials, colored light, and projected memories turn a room into an imagined interior of the body.</p><a class="editorial-link" href="tba/">View the project <span aria-hidden="true">↗</span></a></div></section><nav class="series-pagination" aria-label="Related work"><a href="../works/">← Visual archive</a><a href="../about/">About the practice →</a></nav></div>'
     baltimore_card = f'<section class="record-page"><a href="baltimore/" aria-label="Explore the Baltimore show">{image("baltimore-performance", "Costumed performers in a constructed Whoop Dee Doo set with a large face above the stage.", "../")}</a><div><p class="kicker">Live show / Baltimore</p><h2 class="record-title">Baltimore show</h2><p class="lead serif">A set becomes a gathering.</p><p>Three photographs of a Whoop Dee Doo show: the performance, the audience, and the room in use.</p><a class="editorial-link" href="baltimore/">View the project <span aria-hidden="true">↗</span></a></div></section>'
     content = content.replace('<nav class="series-pagination"', baltimore_card + '<nav class="series-pagination"', 1)
+    content = content.replace('Installation / Portland</p>', f'Installation / Portland / {PROJECT_DATES["tba"]}</p>')
+    content = content.replace('Live show / Baltimore</p>', f'Live show / Baltimore / {PROJECT_DATES["baltimore"]}</p>')
     write('whoop-dee-doo/index.html', document('Whoop Dee Doo', 'Collaborative work through Whoop Dee Doo: an interactive installation for TBA in Portland and a live show in Baltimore.', content, '../', 'Works'))
     images = [
         ('tba-room', 'Room view', 'A purple and red-lit installation with reflective circular forms covering the left wall, a sculptural brain in the foreground, and a projection at the back.'),
@@ -307,6 +325,7 @@ def whoop_dee_doo():
     content += '<div class="wrap"><div class="series-intro"><p>Part of a larger Whoop Dee Doo environment themed around the body, this room imagined the brain as a space visitors could enter. A sculptural brain could be manipulated to control projected “memories.” Arduino, tilt switches, Max/MSP, and found video connected the object to the changing image. Discarded materials—including carpet, trash bags, and metallic bowls—formed the surrounding room.</p><dl class="series-meta"><div><dt>Project</dt><dd>Whoop Dee Doo / TBA, Portland</dd></div><div><dt>Interactive system</dt><dd>Roger Link</dd></div><div><dt>Room design</dt><dd>Roger Link with Natalie Myers and Chris Beer</dd></div><div><dt>Photographs</dt><dd>Roger Link</dd></div></dl></div>'
     content += f'<div class="gallery">{"".join(figures)}</div><nav class="series-pagination" aria-label="Related work"><a href="../">← Whoop Dee Doo</a><a href="../../works/">Visual archive →</a></nav></div>'
     content += '<dialog class="viewer" id="viewer" aria-label="Project photograph viewer"><div class="viewer-layout"><div class="viewer-top"><span data-view-position aria-live="polite"></span><button type="button" data-view-close autofocus>Close ×</button></div><figure><img src="" alt=""></figure><div class="viewer-bottom"><span data-view-caption></span><div class="viewer-controls"><button type="button" data-view-previous aria-label="Previous image">← Previous</button><button type="button" data-view-next aria-label="Next image">Next →</button></div></div></div></dialog>'
+    content = content.replace('<div><dt>Interactive system</dt>', date_detail(PROJECT_DATES['tba']) + '<div><dt>Interactive system</dt>', 1)
     write('whoop-dee-doo/tba/index.html', document('TBA installation — Whoop Dee Doo', 'An interactive brain-themed environment for TBA in Portland, made through Whoop Dee Doo. Project photographs by Roger Link.', content, '../../', 'Works'))
     images = [
         ('baltimore-performance', 'Performance / constructed set', 'Costumed performers gather around a green-covered table inside a white Whoop Dee Doo set, beneath a large sculptural face.'),
@@ -320,6 +339,7 @@ def whoop_dee_doo():
     content += '<div class="wrap"><div class="series-intro"><p>A Whoop Dee Doo show in Baltimore. These three photographs move from the constructed set and performance to the audience, then back into the shared room. Roger Link appears in black in the final photograph.</p><dl class="series-meta"><div><dt>Project</dt><dd>Whoop Dee Doo</dd></div><div><dt>Location</dt><dd>Baltimore</dd></div><div><dt>Documentation</dt><dd>Performance / Audience / In the room</dd></div><div><dt>Archive</dt><dd><a href="../">Whoop Dee Doo ↗</a></dd></div></dl></div>'
     content += f'<div class="gallery">{"".join(figures)}</div><nav class="series-pagination" aria-label="Related projects"><a href="../">← Whoop Dee Doo</a><a href="../tba/">TBA installation →</a></nav></div>'
     content += '<dialog class="viewer" id="viewer" aria-label="Project photograph viewer"><div class="viewer-layout"><div class="viewer-top"><span data-view-position aria-live="polite"></span><button type="button" data-view-close autofocus>Close ×</button></div><figure><img src="" alt=""></figure><div class="viewer-bottom"><span data-view-caption></span><div class="viewer-controls"><button type="button" data-view-previous aria-label="Previous image">← Previous</button><button type="button" data-view-next aria-label="Next image">Next →</button></div></div></div></dialog>'
+    content = content.replace('<div><dt>Location</dt>', date_detail(PROJECT_DATES['baltimore']) + '<div><dt>Location</dt>', 1)
     write('whoop-dee-doo/baltimore/index.html', document('Baltimore show — Whoop Dee Doo', 'Three photographs of a Whoop Dee Doo show in Baltimore: performance, audience, and Roger Link in the room.', content, '../../', 'Works'))
 
 
