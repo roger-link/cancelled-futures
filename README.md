@@ -16,7 +16,7 @@ This replacement is published through the existing GitHub Pages source branch, `
 - `/works/everyday/`: Chips, Yellow wall, and Desire Lines / pavement, grouped as three photographs, 2010
 - `/works/chips/` and `/works/desire-lines/`: retained links redirecting to Everyday
 - `/works/drawn-fields/`: fourteen iPad drawings, 2024
-- `/works/processing-studies/`: four still outputs from Processing scripts, also linked from Experiments; year awaits confirmation
+- `/works/processing-studies/`: four still outputs from Processing scripts, also linked from Experiments, 2026
 - `/works/facades-grids/`: six spatial studies
 - `/works/rooms-without-occupants/`: Somewhere Between, four spatial studies; original URL retained
 - `/works/works-on-paper/`: five drawings and works on paper; photographed June 3, 2025, confirmed by DateTimeOriginal in all five source photographs, not a confirmed artwork creation date
@@ -29,7 +29,7 @@ This replacement is published through the existing GitHub Pages source branch, `
 
 All collection details include a Date row. Explicit dates are preserved; otherwise a known collection year is used, or “To confirm” when unknown. Photography dates remain camera-recorded rather than timezone-converted: Bicycle, April 23, 2007; Body / Exposure, May 17, 2009; Sixteen, August 30–31, 2008; Flowers, October 17, 2008. Roger supplied Everyday 2010 and Drawn Fields 2024, and requested the paper collection display just 2025. Facades / Grids and Somewhere Between display their existing 2022 collection year. The Bicycle title omits its year; its existing URL is unchanged.
 
-Date audit: the official Whoop Dee Doo project archives confirm TBA as 2011 (https://www.whoopdeedoo.org/your-body) and Baltimore as 2012 (https://www.whoopdeedoo.org/uh-oh). Baltimore source photographs also record April 25, 2012 in DateTimeOriginal, distinct from their later modification dates. Only the event year is displayed, not an inferred performance day. Processing Studies, Wave Sculpture, and Unfold display “To confirm” until Roger supplies their years; repository commits, download times, and screenshot dates are not treated as creation dates. Plastic Memory retains forthcoming status with Release date: Not announced. Project dates are maintained in PROJECT_DATES in tools/render.py.
+Date audit: the official Whoop Dee Doo project archives confirm TBA as 2011 (https://www.whoopdeedoo.org/your-body) and Baltimore as 2012 (https://www.whoopdeedoo.org/uh-oh). Baltimore source photographs also record April 25, 2012 in DateTimeOriginal, distinct from their later modification dates. Only the event year is displayed, not an inferred performance day. Roger confirmed 2026 for Processing Studies, Wave Sculpture, and the start of Unfold; repository commits, download times, and screenshot dates are not treated as creation dates. Plastic Memory retains forthcoming status with Release date: Not announced. Project dates are maintained in PROJECT_DATES in tools/render.py.
 
 Static HTML, CSS, and JavaScript with local WebP artwork and self-hosted fonts. No analytics, cookies, accounts, or external assets are required at runtime. Wave Sculpture uses a locally vendored Three.js 0.160.0 runtime, loaded only after Play; no package installation or build is needed. Font licenses are included in `assets/fonts/`. WebP renditions omit source EXIF metadata, including camera location. Originals remain outside this checkout and are unchanged.
 

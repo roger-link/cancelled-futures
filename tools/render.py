@@ -8,7 +8,7 @@ DIMENSIONS = json.loads((ROOT / 'assets/art/dimensions.json').read_text())
 COLLECTIONS = [
     {
         'slug': 'processing-studies', 'title': 'Processing Studies', 'number': 'CF—GA—001',
-        'category': 'generative', 'year': 'Year to confirm', 'medium': 'Generative art / Processing',
+        'category': 'generative', 'year': '2026', 'medium': 'Generative art / Processing',
         'lead': 'Fragments accumulate. An image takes shape.',
         'description': 'Four still outputs made with Processing scripts by Roger Link. Bright color, patterned fragments, muted photographic textures, and a restrained ochre field offer four different densities of the same fragmented visual language. These are saved images, not a live browser animation. Collection and image captions are descriptive working labels.',
         'source': 'https://github.com/roger-link/processing',
@@ -130,8 +130,8 @@ COLLECTIONS = [
 PROJECT_DATES = {
     'tba': '2011',
     'baltimore': '2012',
-    'wave-sculpture': 'To confirm',
-    'unfold': 'To confirm',
+    'wave-sculpture': '2026',
+    'unfold': '2026',
 }
 
 
