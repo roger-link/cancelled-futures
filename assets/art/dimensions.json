@@ -958,5 +958,173 @@
   "dream-boredom-prompt-1600": {
     "width": 900,
     "height": 1600
+  },
+  "exhibition-void1-480": {
+    "width": 480,
+    "height": 358
+  },
+  "exhibition-void1-960": {
+    "width": 960,
+    "height": 717
+  },
+  "exhibition-void1-1600": {
+    "width": 1600,
+    "height": 1195
+  },
+  "exhibition-void2-480": {
+    "width": 358,
+    "height": 480
+  },
+  "exhibition-void2-960": {
+    "width": 717,
+    "height": 960
+  },
+  "exhibition-void2-1600": {
+    "width": 1195,
+    "height": 1600
+  },
+  "exhibition-void3-480": {
+    "width": 480,
+    "height": 358
+  },
+  "exhibition-void3-960": {
+    "width": 960,
+    "height": 717
+  },
+  "exhibition-void3-1600": {
+    "width": 1600,
+    "height": 1195
+  },
+  "exhibition-void4-480": {
+    "width": 358,
+    "height": 480
+  },
+  "exhibition-void4-960": {
+    "width": 717,
+    "height": 960
+  },
+  "exhibition-void4-1600": {
+    "width": 1195,
+    "height": 1600
+  },
+  "exhibition-void5-480": {
+    "width": 358,
+    "height": 480
+  },
+  "exhibition-void5-960": {
+    "width": 717,
+    "height": 960
+  },
+  "exhibition-void5-1600": {
+    "width": 1195,
+    "height": 1600
+  },
+  "exhibition-void6-480": {
+    "width": 358,
+    "height": 480
+  },
+  "exhibition-void6-960": {
+    "width": 717,
+    "height": 960
+  },
+  "exhibition-void6-1600": {
+    "width": 1195,
+    "height": 1600
+  },
+  "exhibition-hose-480": {
+    "width": 358,
+    "height": 480
+  },
+  "exhibition-hose-960": {
+    "width": 717,
+    "height": 960
+  },
+  "exhibition-hose-1600": {
+    "width": 1195,
+    "height": 1600
+  },
+  "exhibition-cardboard-480": {
+    "width": 358,
+    "height": 480
+  },
+  "exhibition-cardboard-960": {
+    "width": 717,
+    "height": 960
+  },
+  "exhibition-cardboard-1600": {
+    "width": 1195,
+    "height": 1600
+  },
+  "exhibition-bags-480": {
+    "width": 358,
+    "height": 480
+  },
+  "exhibition-bags-960": {
+    "width": 717,
+    "height": 960
+  },
+  "exhibition-bags-1600": {
+    "width": 1195,
+    "height": 1600
+  },
+  "exhibition-fire-480": {
+    "width": 480,
+    "height": 358
+  },
+  "exhibition-fire-960": {
+    "width": 960,
+    "height": 717
+  },
+  "exhibition-fire-1600": {
+    "width": 1600,
+    "height": 1195
+  },
+  "exhibition-foam-480": {
+    "width": 480,
+    "height": 358
+  },
+  "exhibition-foam-960": {
+    "width": 960,
+    "height": 717
+  },
+  "exhibition-foam-1600": {
+    "width": 1600,
+    "height": 1195
+  },
+  "exhibition-tape-480": {
+    "width": 480,
+    "height": 358
+  },
+  "exhibition-tape-960": {
+    "width": 960,
+    "height": 717
+  },
+  "exhibition-tape-1600": {
+    "width": 1600,
+    "height": 1195
+  },
+  "exhibition-burden-weiss-480": {
+    "width": 480,
+    "height": 358
+  },
+  "exhibition-burden-weiss-960": {
+    "width": 960,
+    "height": 717
+  },
+  "exhibition-burden-weiss-1600": {
+    "width": 1600,
+    "height": 1195
+  },
+  "exhibition-fomo-480": {
+    "width": 480,
+    "height": 358
+  },
+  "exhibition-fomo-960": {
+    "width": 960,
+    "height": 717
+  },
+  "exhibition-fomo-1600": {
+    "width": 1600,
+    "height": 1195
   }
 }

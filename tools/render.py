@@ -40,6 +40,30 @@ COLLECTIONS = [
         ],
     },
     {
+        'slug': 'imagined-exhibitions', 'title': 'Imagined Exhibitions', 'number': 'CF—AI—002',
+        'category': 'ai', 'year': '2026', 'medium': 'AI-generated exhibition studies',
+        'tool': 'Nano Banana',
+        'lead': 'Exhibitions that exist as images.',
+        'description': 'Imagined exhibitions made with Nano Banana in 2026. Dark rooms, temporary walls, and everyday materials become places to try out installations. These are AI-generated images, not documentation of built exhibitions. The group names and captions describe what’s in the pictures.',
+        'groups': [('Dark rooms', 6), ('Temporary walls', 6), ('Gallery interiors', 2)],
+        'images': [
+            ('exhibition-void1', 'Pedestal / colored light', 'An imagined purple and blue room with a small crystalline sculpture on a pedestal, seen through a copper-colored opening.'),
+            ('exhibition-void2', 'Gold window', 'A framed field of crumpled gold material glows against the purple walls of an imagined room.'),
+            ('exhibition-void3', 'Green fragments', 'Bright green crystalline forms float above a dark curved ridge in a purple exhibition space.'),
+            ('exhibition-void4', 'Hanging copper', 'A dense curtain of copper-colored strands descends into an imagined purple room.'),
+            ('exhibition-void5', 'Green mass', 'A glossy dark green sculptural mass stands at the end of a narrow burgundy room.'),
+            ('exhibition-void6', 'Clear fragments', 'Clear crystalline fragments gather on a dark floor beneath a recessed copper-colored wall piece.'),
+            ('exhibition-hose', 'Hose', 'An imagined unfinished doorway packed with coils of green garden hose.'),
+            ('exhibition-cardboard', 'Cardboard', 'Stacks of flattened brown cardboard fill an opening in a temporary white exhibition wall.'),
+            ('exhibition-bags', 'Bags', 'Black plastic bags protrude through a wall opening and gather on the plywood floor of an imagined installation.'),
+            ('exhibition-fire', 'Fire', 'A small square of flame appears in the far wall of an empty, unfinished white exhibition enclosure.'),
+            ('exhibition-foam', 'Foam', 'Broken mint-green foam forms a large pile between temporary white walls.'),
+            ('exhibition-tape', 'Tape', 'Overlapping gray strips form a dense rectangular tangle on a temporary exhibition wall.'),
+            ('exhibition-burden-weiss', 'Accumulation', 'An imagined gallery is crowded with tires, ladders, furniture, and colorful construction-like objects.'),
+            ('exhibition-fomo', 'Mirrored opening', 'A large recessed opening in a white gallery wall contains purple and gold reflections and scattered fragments.'),
+        ],
+    },
+    {
         'slug': 'bicycle-2007', 'title': 'Bicycle', 'number': 'CF—PH—001',
         'date': 'April 23, 2007',
         'category': 'photography', 'year': '2007', 'medium': 'Color-inverted photographs',
@@ -287,7 +311,18 @@ def series():
         if collection.get('tool'):
             date_details += f'<div><dt>Tool</dt><dd>{escape(collection["tool"])}</dd></div>'
         selection = f'{len(figures)} {"work" if len(figures) == 1 else "works"}'
-        content += f'<div class="wrap"><div class="series-intro"><p>{collection["description"]}</p><dl class="series-meta"><div><dt>Collection</dt><dd>{collection["medium"]}</dd></div>{date_details}<div><dt>Selection</dt><dd>{selection}</dd></div><div><dt>Artist</dt><dd>Roger Link</dd></div><div><dt>Archive</dt><dd><a href="../">All collections ↗</a></dd></div></dl></div><div class="gallery">{"".join(figures)}</div>'
+        gallery = f'<div class="gallery">{"".join(figures)}</div>'
+        if collection.get('groups'):
+            sections = []
+            offset = 0
+            for group_index, (group_title, group_count) in enumerate(collection['groups'], start=1):
+                group_figures = ''.join(figures[offset:offset + group_count])
+                sections.append(f'<section class="collection-group" aria-labelledby="group-{group_index}"><h2 id="group-{group_index}">{escape(group_title)}</h2><div class="gallery">{group_figures}</div></section>')
+                offset += group_count
+            if offset != len(figures):
+                raise ValueError(f'Collection groups do not match image count: {collection["slug"]}')
+            gallery = ''.join(sections)
+        content += f'<div class="wrap"><div class="series-intro"><p>{collection["description"]}</p><dl class="series-meta"><div><dt>Collection</dt><dd>{collection["medium"]}</dd></div>{date_details}<div><dt>Selection</dt><dd>{selection}</dd></div><div><dt>Artist</dt><dd>Roger Link</dd></div><div><dt>Archive</dt><dd><a href="../">All collections ↗</a></dd></div></dl></div>{gallery}'
         previous = COLLECTIONS[(index - 1) % len(COLLECTIONS)]
         following = COLLECTIONS[(index + 1) % len(COLLECTIONS)]
         content += f'<nav class="series-pagination" aria-label="Browse collections"><a href="../{previous["slug"]}/"><small>Previous collection</small>← {previous["title"]}</a><a href="../{following["slug"]}/"><small>Next collection</small>{following["title"]} →</a></nav></div>'
