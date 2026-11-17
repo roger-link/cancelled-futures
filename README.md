@@ -53,6 +53,8 @@ Four additional drawings were initially supplied as IMG_0034.PNG, IMG_0031.jpg, 
 
 ## Archive follow-up
 
+Early Dreams is a six-image selection made with Dream by WOMBO, dated December 9 and 11, 2021 from Google Photos. Prompt cards were visually matched to their adjacent clean exports: IMG_1454/1455 (spaghetti Dolly Parton), IMG_1472/1473 (Haunted scary happy meal), IMG_1717/1718 (French fry orgy, the pastel December 11 version), IMG_1485/1486 (Scary bling), IMG_1464/1465 (Anhedonia), and IMG_1468/1469 (My Life boredom). Exact prompt text is retained, including capitalization. Clean results are shown first, with the tool and prompt visible and an expandable original prompt card. The images are labeled AI-generated, separate from Processing Studies. Web copies preserve composition and color without cropping or upscaling; original downloaded files are retained outside the public site in work/early-dreams-originals. No model architecture or style preset is claimed without evidence.
+
 - Confirm working collection names, years, authorship, and materials against originals. Spatial works are labeled generally as Digital image studies until their process is confirmed.
 - Replace screenshot-derived drawing copies with clean exports where possible; recover higher-resolution early photographs and spatial studies if available.
 - Expand or tighten the small selections through final sequencing rather than padding to a quota.

@@ -814,5 +814,149 @@
   "facade-yellow-lattice-1600": {
     "width": 512,
     "height": 512
+  },
+  "dream-spaghetti-480": {
+    "width": 294,
+    "height": 480
+  },
+  "dream-spaghetti-960": {
+    "width": 588,
+    "height": 960
+  },
+  "dream-spaghetti-1600": {
+    "width": 960,
+    "height": 1568
+  },
+  "dream-spaghetti-prompt-480": {
+    "width": 270,
+    "height": 480
+  },
+  "dream-spaghetti-prompt-960": {
+    "width": 540,
+    "height": 960
+  },
+  "dream-spaghetti-prompt-1600": {
+    "width": 900,
+    "height": 1600
+  },
+  "dream-happy-meal-480": {
+    "width": 294,
+    "height": 480
+  },
+  "dream-happy-meal-960": {
+    "width": 588,
+    "height": 960
+  },
+  "dream-happy-meal-1600": {
+    "width": 960,
+    "height": 1568
+  },
+  "dream-happy-meal-prompt-480": {
+    "width": 270,
+    "height": 480
+  },
+  "dream-happy-meal-prompt-960": {
+    "width": 540,
+    "height": 960
+  },
+  "dream-happy-meal-prompt-1600": {
+    "width": 900,
+    "height": 1600
+  },
+  "dream-fries-480": {
+    "width": 294,
+    "height": 480
+  },
+  "dream-fries-960": {
+    "width": 588,
+    "height": 960
+  },
+  "dream-fries-1600": {
+    "width": 960,
+    "height": 1568
+  },
+  "dream-fries-prompt-480": {
+    "width": 270,
+    "height": 480
+  },
+  "dream-fries-prompt-960": {
+    "width": 540,
+    "height": 960
+  },
+  "dream-fries-prompt-1600": {
+    "width": 900,
+    "height": 1600
+  },
+  "dream-bling-480": {
+    "width": 294,
+    "height": 480
+  },
+  "dream-bling-960": {
+    "width": 588,
+    "height": 960
+  },
+  "dream-bling-1600": {
+    "width": 960,
+    "height": 1568
+  },
+  "dream-bling-prompt-480": {
+    "width": 270,
+    "height": 480
+  },
+  "dream-bling-prompt-960": {
+    "width": 540,
+    "height": 960
+  },
+  "dream-bling-prompt-1600": {
+    "width": 900,
+    "height": 1600
+  },
+  "dream-anhedonia-480": {
+    "width": 294,
+    "height": 480
+  },
+  "dream-anhedonia-960": {
+    "width": 588,
+    "height": 960
+  },
+  "dream-anhedonia-1600": {
+    "width": 960,
+    "height": 1568
+  },
+  "dream-anhedonia-prompt-480": {
+    "width": 270,
+    "height": 480
+  },
+  "dream-anhedonia-prompt-960": {
+    "width": 540,
+    "height": 960
+  },
+  "dream-anhedonia-prompt-1600": {
+    "width": 900,
+    "height": 1600
+  },
+  "dream-boredom-480": {
+    "width": 294,
+    "height": 480
+  },
+  "dream-boredom-960": {
+    "width": 588,
+    "height": 960
+  },
+  "dream-boredom-1600": {
+    "width": 960,
+    "height": 1568
+  },
+  "dream-boredom-prompt-480": {
+    "width": 270,
+    "height": 480
+  },
+  "dream-boredom-prompt-960": {
+    "width": 540,
+    "height": 960
+  },
+  "dream-boredom-prompt-1600": {
+    "width": 900,
+    "height": 1600
   }
 }

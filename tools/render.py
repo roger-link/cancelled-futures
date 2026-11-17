@@ -1,9 +1,11 @@
 from html import escape
+from hashlib import sha256
 import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DIMENSIONS = json.loads((ROOT / 'assets/art/dimensions.json').read_text())
+STYLESHEET_VERSION = sha256((ROOT / 'assets/editorial.css').read_bytes()).hexdigest()[:12]
 
 COLLECTIONS = [
     {
@@ -13,6 +15,29 @@ COLLECTIONS = [
         'description': 'Four still outputs made with Processing scripts by Roger Link. Bright color, patterned fragments, muted photographic textures, and a restrained ochre field offer four different densities of the same fragmented visual language. These are saved images, not a live browser animation. Collection and image captions are descriptive working labels.',
         'source': 'https://github.com/roger-link/processing',
         'images': [('processing-color', 'Color fragments', 'Overlapping angular fragments in pink, violet, blue, red, and orange form a dense image.'), ('processing-pattern', 'Pattern fragments', 'Black-and-white patterned fragments are interspersed with sharp yellow, blue, and magenta shapes.'), ('processing-earth', 'Muted fragments', 'Layered angular fragments of muted brown, gray, green, and cream photographic textures.'), ('processing-ochre', 'Ochre field', 'A dense field of translucent ochre and olive angular shapes against dark gaps.')],
+    },
+    {
+        'slug': 'early-dreams', 'title': 'Early Dreams', 'number': 'CF—AI—001',
+        'category': 'ai', 'year': '2021', 'date': 'December 9 & 11, 2021',
+        'medium': 'AI-generated images', 'tool': 'Dream by WOMBO',
+        'lead': 'A few words. Something unexpected.',
+        'description': 'Six experiments with Dream by WOMBO from December 2021. I fed it short prompts and kept the odd surprises: a singer made of spaghetti, a haunted meal, a room that almost makes sense. These are saved results from an early text-to-image tool, with the original prompts and prompt cards kept alongside them.',
+        'prompts': {
+            'dream-spaghetti': 'spaghetti Dolly Parton',
+            'dream-happy-meal': 'Haunted scary happy meal',
+            'dream-fries': 'French fry orgy',
+            'dream-bling': 'Scary bling',
+            'dream-anhedonia': 'Anhedonia',
+            'dream-boredom': 'My Life boredom',
+        },
+        'images': [
+            ('dream-spaghetti', 'Spaghetti Dolly Parton', 'A small pink-clad singer with spaghetti hair unravels into noodles across a wooden surface.'),
+            ('dream-happy-meal', 'Haunted scary happy meal', 'A ghostly purple toy and distorted burgers appear inside a shiny translucent package.'),
+            ('dream-fries', 'French fry orgy', 'A tangle of golden fries suggests intertwined figures in a pale violet and turquoise room.'),
+            ('dream-bling', 'Scary bling', 'A rounded metallic mask with too many teeth is covered in pink reflections and small gold charms.'),
+            ('dream-anhedonia', 'Anhedonia', 'An empty pink-lit room with a dark opening and a spiky purple growth on the right.'),
+            ('dream-boredom', 'My Life boredom', 'A glowing white opening in a dark gray room with wavering, textured walls.'),
+        ],
     },
     {
         'slug': 'bicycle-2007', 'title': 'Bicycle', 'number': 'CF—PH—001',
@@ -173,7 +198,7 @@ def document(title, description, content, prefix='./', current='', home=False, e
   <meta property="og:description" content="{escape(description, quote=True)}">
   <meta property="og:type" content="website">
   <link rel="icon" href="{prefix}assets/editorial-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="{prefix}assets/editorial.css">
+  <link rel="stylesheet" href="{prefix}assets/editorial.css?v={STYLESHEET_VERSION}">
   <script src="{prefix}assets/archive.js" defer></script>
   {extra_script}
 </head>
@@ -235,7 +260,7 @@ def works():
         cards.append(f'''<article class="work-card" data-category="{collection['category']}"><a href="{collection['slug']}/"><div class="cover">{image(slug, alt, '../', sizes='(max-width: 600px) 44vw, (max-width: 900px) 46vw, 30vw')}</div><p class="meta"><span>{collection['number']}</span><span>{collection['year']} / {count} {'work' if count == 1 else 'works'}</span></p><h2>{collection['title']} <span aria-hidden="true">↗</span></h2></a><p class="card-note">{collection['medium']}</p></article>''')
     cards.append(f'<article class="work-card" data-category="moving"><a href="../experiments/wave-sculpture/"><div class="cover">{image("wave-warm", "Still frame from the warm version of Wave Sculpture, a moving field of carved forms and colored light.", "../")}</div><p class="meta"><span>CF—GV—001</span><span>Two versions / Live work</span></p><h2>Wave Sculpture <span aria-hidden="true">↗</span></h2></a><p class="card-note">Generative moving image / JavaScript</p></article>')
     cards.append(f'<article class="work-card" data-category="collaborative"><a href="../whoop-dee-doo/"><div class="cover">{image("tba-room", "Whoop Dee Doo installation for TBA: a reflective purple-lit room with a sculptural brain and projected image.", "../")}</div><p class="meta"><span>Whoop Dee Doo</span><span>TBA / Portland</span></p><h2>Whoop Dee Doo <span aria-hidden="true">↗</span></h2></a><p class="card-note">Collaborative installations / Project documentation</p></article>')
-    filters = [('all', 'All works'), ('photography', 'Photography'), ('drawing', 'Drawings'), ('spatial', 'Spatial studies'), ('paper', 'On paper'), ('generative', 'Generative art'), ('moving', 'Moving image'), ('collaborative', 'Collaborative')]
+    filters = [('all', 'All works'), ('photography', 'Photography'), ('drawing', 'Drawings'), ('spatial', 'Spatial studies'), ('paper', 'On paper'), ('generative', 'Generative art'), ('ai', 'AI images'), ('moving', 'Moving image'), ('collaborative', 'Collaborative')]
     buttons = ''.join(f'<button class="filter" type="button" data-filter="{key}" aria-pressed="{str(key == "all").lower()}">{label}</button>' for key, label in filters)
     content = heading('CF / Visual archive', 'Selected works<span style="color:var(--rust)">.</span>', 'Photography, drawings, surfaces, and uncertain spaces.', 'An edited archive, organized as collections. Open a series to follow its sequence.')
     content += f'<div class="wrap"><div class="filters" role="group" aria-label="Filter collections">{buttons}</div><p class="visually-hidden" id="filter-status" role="status" aria-live="polite"></p><div class="work-grid">{"".join(cards)}</div></div>'
@@ -247,12 +272,20 @@ def series():
         figures = []
         for position, (slug, title, alt) in enumerate(collection['images'], start=1):
             caption = escape(title, quote=True)
-            figures.append(f'<figure><a class="image-link" href="../../assets/art/{slug}-1600.webp" data-view-image data-caption="{caption}" aria-label="Enlarge: {caption}">{image(slug, alt, "../../", lazy=position != 1, sizes="(max-width: 600px) 92vw, 80vw" if position == 1 else "(max-width: 600px) 92vw, 45vw")}</a><figcaption><span>{title}</span><span>{position:02d} / {len(collection["images"]):02d}</span></figcaption></figure>')
+            process_details = ''
+            if slug in collection.get('prompts', {}):
+                prompt = escape(collection['prompts'][slug])
+                tool = escape(collection['tool'])
+                prompt_alt = f'Original Dream by WOMBO card showing the prompt: {collection["prompts"][slug]}'
+                process_details = f'<dl class="prompt-meta"><div><dt>Tool</dt><dd>{tool}</dd></div><div><dt>Original prompt</dt><dd>“{prompt}”</dd></div></dl><details class="prompt-reference"><summary>View original prompt card<span class="visually-hidden"> for {caption}</span></summary><a href="../../assets/art/{slug}-prompt-1600.webp" aria-label="Enlarge original prompt card for {caption}">{image(slug + "-prompt", prompt_alt, "../../", sizes="(max-width: 600px) 92vw, 45vw")}</a></details>'
+            figures.append(f'<figure><a class="image-link" href="../../assets/art/{slug}-1600.webp" data-view-image data-caption="{caption}" aria-label="Enlarge: {caption}">{image(slug, alt, "../../", lazy=position != 1, sizes="(max-width: 600px) 92vw, 80vw" if position == 1 else "(max-width: 600px) 92vw, 45vw")}</a><figcaption><span>{escape(title)}</span><span>{position:02d} / {len(collection["images"]):02d}</span></figcaption>{process_details}</figure>')
         content = heading(collection['number'] + ' / ' + collection['year'], collection['title'], collection['lead'])
         if collection.get('source'):
             content += f'<div class="wrap"><a class="editorial-link" href="{escape(collection["source"], quote=True)}" style="margin-top:24px">View the Processing scripts <span aria-hidden="true">↗</span></a></div>'
         collection_date = collection.get('date') or (collection['year'] if collection['year'].isdigit() else 'To confirm')
         date_details = date_detail(collection_date)
+        if collection.get('tool'):
+            date_details += f'<div><dt>Tool</dt><dd>{escape(collection["tool"])}</dd></div>'
         selection = f'{len(figures)} {"work" if len(figures) == 1 else "works"}'
         content += f'<div class="wrap"><div class="series-intro"><p>{collection["description"]}</p><dl class="series-meta"><div><dt>Collection</dt><dd>{collection["medium"]}</dd></div>{date_details}<div><dt>Selection</dt><dd>{selection}</dd></div><div><dt>Artist</dt><dd>Roger Link</dd></div><div><dt>Archive</dt><dd><a href="../">All collections ↗</a></dd></div></dl></div><div class="gallery">{"".join(figures)}</div>'
         previous = COLLECTIONS[(index - 1) % len(COLLECTIONS)]
